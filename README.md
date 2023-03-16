@@ -3,6 +3,6 @@ IT Project using the Magic the Gathering API
 
 Colaborators:
 - Max Wiercx
-- 2
+- Artjom Kuzmenko
 - 3
 - 4
