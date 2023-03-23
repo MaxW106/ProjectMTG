@@ -8,7 +8,6 @@
 .onder .wrapper {
   display: inline-block;
   text-align: center;
-  text-decoration: none;
 }
 
 .boven img,
@@ -41,7 +40,6 @@
     color: var(--bg-color-purple);
     font-size: xx-large;
     text-transform: uppercase;
-    text-decoration: none;
     border-bottom: 2px solid transparent;
     transition: border-bottom 0.3s ease; /* Overgang voor onderstreping */
     font-weight: bolder;
@@ -72,4 +70,7 @@ footer{
 }
 #sectionhome article figure img{
   max-height: 250px;
+}
+a{
+    text-decoration: none;
 }
