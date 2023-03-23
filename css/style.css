@@ -1,53 +1,43 @@
 
-img {
-    width: 100%;
-    height: auto;
-  }
-  
+.boven .wrapper,
+.onder .wrapper {
+  display: inline-block;
+  text-align: center;
+}
 
-  figcaption {
-    text-align: center;
-  }
-  
+.boven img,
+.onder img {
+  display: block;
+}
 
-  .boven img {
-    float: left;
-    width: 33.33%;
-  }
-  
+.nav {
+  background-color: #270327; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+}
 
-  .onder img {
-    float: left;
-    width: 50%;
-  }
-  
- 
-  img + figcaption {
-    margin-top: 10px;
-  }
-  
-  ul {
-    list-style: none;
-  }
-  
- 
-  body {
-    margin-top: 20px;
-  }
-  
- 
-  nav {
-    background-color: black;
-  }
-  
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
 
-  nav a {
-    color: white;
-  }
-  
+.nav li {
+  margin: 0 10px;
+}
 
-  nav li {
-    display: inline-block;
-    margin-right: 20px;
-  }
-  
+.uppernav {
+  text-decoration: none;
+  color: #FFF; /* Wit */
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.3s;
+}
+
+.uppernav:hover {
+  border-bottom: 2px solid #FFA07A; /* Vuurachtige kleur */
+}
