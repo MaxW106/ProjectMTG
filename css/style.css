@@ -10,7 +10,9 @@
   text-align: center;
   text-decoration: none;
 }
-
+.boven figcaption{
+  text-decoration: none;
+}
 .boven img,
 .onder img {
   display: block;
@@ -72,4 +74,9 @@ footer{
 }
 #sectionhome article figure img{
   max-height: 250px;
+}
+#sectionhome{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
