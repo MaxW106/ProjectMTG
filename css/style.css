@@ -60,6 +60,7 @@ footer{
   color: var(--bg-color-white);
   padding: 20px;
   align-items: center;
+<<<<<<< HEAD
 }
 -------------------------
 
@@ -106,3 +107,7 @@ footer{
   .nav a:hover {
     border-bottom: 2px solid rgb(177, 15, 15); /* Onderstreping bij hover */
   }
+=======
+  margin: -8px;
+}
+>>>>>>> 7591bb137cedf589e7c0b2e6cec5857a4c64c130
