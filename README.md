@@ -13,5 +13,5 @@ Colaborators:
 npm package used to request cards:
 mtgsdk-ts
 
-documentation
+documentation:
 https://github.com/MagicTheGathering/mtg-sdk-typescript
