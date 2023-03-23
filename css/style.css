@@ -21,6 +21,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  margin: -8px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
 }
 
@@ -45,4 +46,11 @@
 
 .uppernav:hover {
   border-bottom: 2px solid var(--bg-color-fire); /* Vuurachtige kleur */
+}
+
+footer{
+  background-color: var(--bg-color-purple);
+  color: var(--bg-color-white);
+  padding: 20px;
+  align-items: center;
 }
