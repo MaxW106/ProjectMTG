@@ -1,4 +1,9 @@
+:root{
+  --bg-color-white: #FFF;
+  --bg-color-purple: #270327;
+  --bg-color-fire: #FFA07A;
 
+}
 .boven .wrapper,
 .onder .wrapper {
   display: inline-block;
@@ -11,7 +16,7 @@
 }
 
 .nav {
-  background-color: #270327; 
+  background-color: var(--bg-color-purple); 
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,11 +38,11 @@
 
 .uppernav {
   text-decoration: none;
-  color: #FFF; /* Wit */
+  color: var(--bg-color-white); /* Wit */
   border-bottom: 2px solid transparent;
   transition: border-bottom 0.3s;
 }
 
 .uppernav:hover {
-  border-bottom: 2px solid #FFA07A; /* Vuurachtige kleur */
+  border-bottom: 2px solid var(--bg-color-fire); /* Vuurachtige kleur */
 }
