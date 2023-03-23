@@ -43,6 +43,7 @@
     border-bottom: 2px solid transparent;
     transition: border-bottom 0.3s ease; /* Overgang voor onderstreping */
     font-weight: bolder;
+    padding-bottom: 0.5rem;
   }
 
 .uppernav {
