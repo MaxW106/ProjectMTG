@@ -115,3 +115,6 @@ footer{
   justify-content: center;
   text-decoration: none;
 }
+#sectionhome article figure img{
+  max-height: 250px;
+}
