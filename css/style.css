@@ -8,6 +8,7 @@
 .onder .wrapper {
   display: inline-block;
   text-align: center;
+  text-decoration: none;
 }
 
 .boven img,
@@ -67,4 +68,5 @@ footer{
   margin: -8px;
   display: flex;
   justify-content: center;
+  text-decoration: none;
 }
