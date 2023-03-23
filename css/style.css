@@ -1,0 +1,53 @@
+
+img {
+    width: 100%;
+    height: auto;
+  }
+  
+
+  figcaption {
+    text-align: center;
+  }
+  
+
+  .boven img {
+    float: left;
+    width: 33.33%;
+  }
+  
+
+  .onder img {
+    float: left;
+    width: 50%;
+  }
+  
+ 
+  img + figcaption {
+    margin-top: 10px;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+ 
+  body {
+    margin-top: 20px;
+  }
+  
+ 
+  nav {
+    background-color: black;
+  }
+  
+
+  nav a {
+    color: white;
+  }
+  
+
+  nav li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
