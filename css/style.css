@@ -59,6 +59,9 @@ footer{
   background-color: var(--bg-color-purple);
   color: var(--bg-color-white);
   padding: 20px;
+  font-size: larger;
   align-items: center;
   margin: -8px;
+  display: flex;
+  justify-content: center;
 }
