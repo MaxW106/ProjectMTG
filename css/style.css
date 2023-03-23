@@ -11,33 +11,34 @@
 }
 
 .nav {
-  background-color: #270327; 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
-}
-
-.nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: row;
-}
-
-.nav li {
-  margin: 0 10px;
-}
-
-.uppernav {
-  text-decoration: none;
-  color: #FFF; /* Wit */
-  border-bottom: 2px solid transparent;
-  transition: border-bottom 0.3s;
-}
-
-.uppernav:hover {
-  border-bottom: 2px solid #FFA07A; /* Vuurachtige kleur */
-}
+    display: flex;
+    justify-content: center; /* Horizontaal centreren */
+    padding: 10px 0; /* Kleiner padding boven en onder */
+    
+    font-family: "Your Game Font", sans-serif; 
+  }
+  
+  .nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav li {
+    margin: 0 10px;
+  }
+  
+  .nav a {
+    color: #270327;
+    font-size: xx-large;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s ease; /* Overgang voor onderstreping */
+    font-weight: bolder;
+  }
+  
+  .nav a:hover {
+    border-bottom: 2px solid rgb(177, 15, 15); /* Onderstreping bij hover */
+  }
