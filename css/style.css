@@ -60,54 +60,5 @@ footer{
   color: var(--bg-color-white);
   padding: 20px;
   align-items: center;
-<<<<<<< HEAD
-}
--------------------------
-
-.boven .wrapper,
-.onder .wrapper {
-  display: inline-block;
-  text-align: center;
-}
-
-.boven img,
-.onder img {
-  display: block;
-}
-
-.nav {
-    display: flex;
-    justify-content: center; /* Horizontaal centreren */
-    padding: 10px 0; /* Kleiner padding boven en onder */
-    
-    font-family: "Your Game Font", sans-serif; 
-  }
-  
-  .nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .nav li {
-    margin: 0 10px;
-  }
-  
-  .nav a {
-    color: #270327;
-    font-size: xx-large;
-    text-transform: uppercase;
-    text-decoration: none;
-    border-bottom: 2px solid transparent;
-    transition: border-bottom 0.3s ease; /* Overgang voor onderstreping */
-    font-weight: bolder;
-  }
-  
-  .nav a:hover {
-    border-bottom: 2px solid rgb(177, 15, 15); /* Onderstreping bij hover */
-  }
-=======
   margin: -8px;
 }
->>>>>>> 7591bb137cedf589e7c0b2e6cec5857a4c64c130
