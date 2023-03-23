@@ -52,4 +52,5 @@ footer{
   color: var(--bg-color-white);
   padding: 20px;
   align-items: center;
+  margin: -8px;
 }
