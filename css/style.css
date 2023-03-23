@@ -110,11 +110,6 @@ footer{
   .nav a:hover {
     border-bottom: 2px solid rgb(177, 15, 15); /* Onderstreping bij hover */
   }
-  margin: -8px;
-  display: flex;
-  justify-content: center;
-  text-decoration: none;
-}
 #sectionhome article figure img{
   max-height: 250px;
 }
