@@ -87,12 +87,12 @@ footer {
     margin-left: -1.5rem;
 }
 
-#sectionhome article figure img {
-    max-height: 250px;
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-#sectionhome {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+.container img {
+    width: 200px;
 }
