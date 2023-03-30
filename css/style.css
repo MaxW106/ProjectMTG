@@ -105,6 +105,9 @@ footer {
     align-items: center;
     min-height: 100vh;
   }
+  label{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
   
   .card {
     background-color: #fff;
@@ -118,7 +121,9 @@ footer {
   .card h1 {
     font-weight: bold;
     margin-bottom: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
+  
   
   .form-input {
     margin-bottom: 20px;
@@ -141,7 +146,7 @@ footer {
   }
   
   .btn {
-    background-color: #1abc9c;
+    background-color: #3980f2;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -153,5 +158,15 @@ footer {
   }
   
   .btn:hover {
-    background-color: #148f77;
+    background-color: #270327;
   }
+  #login-image {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+  img.logo{
+  align-items: center;
+  width: 10%;
+  }
+  
