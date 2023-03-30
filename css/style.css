@@ -1,132 +1,98 @@
-:root{
-  --bg-color-white: #FFF;
-  --bg-color-purple: #270327;
-  --bg-color-fire: #FFA07A;
-
+:root {
+    --bg-color-white: #fff;
+    --bg-color-purple: #270327;
+    --bg-color-fire: #ffa07a;
 }
+
 .boven .wrapper,
 .onder .wrapper {
-  display: inline-block;
-  text-align: center;
+    display: inline-block;
+    text-align: center;
 }
-.boven figcaption{
-  text-decoration: none;
+
+.boven figcaption {
+    text-decoration: none;
 }
+
 .boven img,
 .onder img {
-  display: block;
+    display: block;
 }
 
 .nav {
-  display: flex;
-  justify-content:center;
-  align-items: center;
-  padding: 20px;
-  margin: -8px;
-  margin-bottom: 1.1rem;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: -8px;
+    margin-bottom: 1.1rem;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
 }
 
 .nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
 }
 
 .nav li {
-  margin: 0 10px;
+    margin: 0 10px;
 }
-a{
+
+a {
     text-decoration: none;
 }
+
 .nav a {
     color: var(--bg-color-purple);
     font-size: xx-large;
     text-transform: uppercase;
+    text-decoration: none;
     border-bottom: 2px solid transparent;
     transition: border-bottom 0.3s ease; /* Overgang voor onderstreping */
     font-weight: bolder;
     padding-bottom: 0.5rem;
-  }
+}
 
 .uppernav {
-  text-decoration: none;
-  color: var(--bg-color-white); /* Wit */
-  border-bottom: 2px solid transparent;
-  transition: border-bottom 0.3s;
+    text-decoration: none;
+    color: var(--bg-color-white); /* Wit */
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s;
 }
 
 .uppernav:hover {
-  border-bottom: 2px solid var(--bg-color-fire); /* Vuurachtige kleur */
+    border-bottom: 2px solid var(--bg-color-fire); /* Vuurachtige kleur */
 }
-footer{
+
+.nav a:hover {
+    border-bottom: 2px solid rgb(177, 15, 15); /* Onderstreping bij hover */
+}
+
+footer {
     display: flex;
     justify-content: center;
-  display: flex;
-  justify-content: center;
-  background-color: var(--bg-color-purple);
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
-  color: var(--bg-color-white);
-  padding: 20px;
-  font-size: larger;
-  margin-left: -1rem;
-  margin-left: -1.5rem;
-  
-}
-
-.boven .wrapper,
-.onder .wrapper {
-  display: inline-block;
-  text-align: center;
-}
-
-.boven img,
-.onder img {
-  display: block;
-}
-
-.nav {
     display: flex;
-    justify-content: center; /* Horizontaal centreren */
-    padding: 10px 0; /* Kleiner padding boven en onder */
-    
-    font-family: "Your Game Font", sans-serif; 
-  }
-  
-  .nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .nav li {
-    margin: 0 10px;
-  }
-  a{
-    text-decoration: none;
-  }
-  .nav a {
-    color: #270327;
-    font-size: xx-large;
-    text-transform: uppercase;
-    text-decoration: none;
-    border-bottom: 2px solid transparent;
-    transition: border-bottom 0.3s ease; /* Overgang voor onderstreping */
-    font-weight: bolder;
-  }
-  
-  .nav a:hover {
-    border-bottom: 2px solid rgb(177, 15, 15); /* Onderstreping bij hover */
-  }
-#sectionhome article figure img{
-  max-height: 250px;
+    justify-content: center;
+    background-color: var(--bg-color-purple);
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    color: var(--bg-color-white);
+    padding: 20px;
+    font-size: larger;
+    margin-left: -1rem;
+    margin-left: -1.5rem;
 }
 
-#sectionhome{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+#sectionhome article figure img {
+    max-height: 250px;
+}
+
+#sectionhome {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
