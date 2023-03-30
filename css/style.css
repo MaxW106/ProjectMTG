@@ -67,6 +67,7 @@ a {
 .uppernav:hover {
     border-bottom: 2px solid var(--bg-color-fire); /* Vuurachtige kleur */
 }
+
 footer {
     display: flex;
     justify-content: center;
