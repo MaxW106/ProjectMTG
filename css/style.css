@@ -98,53 +98,54 @@ footer {
 
 /*Voor de opmaak van de login */
 
-  .login {
+.login {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-  }
-  label{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  }
-  
-  .card {
+}
+label {
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.card {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
     width: 350px;
     padding: 40px;
     text-align: center;
-  }
-  
-  .card h1 {
+}
+
+.card h1 {
     font-weight: bold;
     margin-bottom: 20px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  }
-  
-  
-  .form-input {
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.form-input {
     margin-bottom: 20px;
     text-align: left;
-  }
-  
-  .form-input label {
+}
+
+.form-input label {
     display: block;
     margin-bottom: 5px;
     font-size: 14px;
     font-weight: bold;
-  }
-  
-  .form-input input {
+}
+
+.form-input input {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
     font-size: 14px;
-  }
-  
-  .btn {
+}
+
+.btn {
     background-color: #3980f2;
     color: #fff;
     border: none;
@@ -154,18 +155,21 @@ footer {
     text-transform: uppercase;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  
-  .btn:hover {
+}
+
+.btn:hover {
     background-color: #270327;
-  }
-  #login-image {
+}
+#login-image {
     display: flex;
     justify-content: center;
     margin-top: 50px;
 }
-  img.logo{
-  align-items: center;
-  width: 10%;
-  }
-  
+img.logo {
+    align-items: center;
+    width: 10%;
+}
+
+.hidden {
+    display: none;
+}
