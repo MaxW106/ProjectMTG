@@ -83,11 +83,15 @@ footer {
 
 .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     margin: 20px;
 }
 
 .container img {
     width: 200px;
+}
+
+.container article {
+    margin: 25px;
 }
