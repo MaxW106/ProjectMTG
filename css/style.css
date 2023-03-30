@@ -62,7 +62,6 @@ a{
   border-bottom: 2px solid var(--bg-color-fire); /* Vuurachtige kleur */
 }
 footer{
-<<<<<<< HEAD
     display: flex;
     justify-content: center;
   display: flex;
@@ -94,13 +93,12 @@ footer{
   .nav a:hover {
     border-bottom: 2px solid rgb(177, 15, 15); /* Onderstreping bij hover */
   }
-#sectionhome article figure img{
-  max-height: 250px;
-}
-
-#sectionhome{
+.container{
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  padding: 15px;
+  justify-content: center;
+  margin: 20px;
+}
+.container img{
+  width: 200px;
 }
