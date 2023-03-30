@@ -12,7 +12,15 @@ app.get("/", (req, res) => {
 });
 
 app.get("/home", (req, res) => {
-    res.render("home");
+    res.render("home", { pages: pages_logged_in });
+});
+
+app.get("/decks", (req, res) => {
+    res.render("decks", { pages: pages_logged_in });
+});
+
+app.get("/drawtest", (req, res) => {
+    res.render("drawtest", { pages: pages_logged_in });
 });
 
 app.get("/*", (req, res) => {
