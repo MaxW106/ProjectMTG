@@ -67,14 +67,7 @@ a {
 .uppernav:hover {
     border-bottom: 2px solid var(--bg-color-fire); /* Vuurachtige kleur */
 }
-
-.nav a:hover {
-    border-bottom: 2px solid rgb(177, 15, 15); /* Onderstreping bij hover */
-}
-
 footer {
-    display: flex;
-    justify-content: center;
     display: flex;
     justify-content: center;
     background-color: var(--bg-color-purple);
