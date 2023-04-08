@@ -1,9 +1,13 @@
 :root {
     --bg-color-white: #fff;
-    --bg-color-purple: #270327;
+    --bg-color-purple: #a20da2;
     --bg-color-fire: #ffa07a;
+    --bg-color-grey: #363636;
+    --bg-color-black: #000000;
 }
-
+body{
+    background-color: var(--bg-color-grey);
+}
 .boven .wrapper,
 .onder .wrapper {
     display: inline-block;
@@ -80,7 +84,21 @@ footer {
     margin-left: -1rem;
     margin-left: -1.5rem;
 }
-
+form{
+    display: flex;
+    justify-content: center;
+}
+form input{
+    border-radius: 7px;
+    background-color: var(--bg-color-white);
+    color: var(--bg-color-black);
+}
+form button{
+    margin-left: 10px;
+    border-radius: 7px;
+    background-color: var(--bg-color-purple);
+    color: var(--bg-color-black);
+}
 .container {
     display: flex;
     justify-content: center;
@@ -90,6 +108,7 @@ footer {
 
 .container img {
     width: 200px;
+    border-radius: 12px;
 }
 
 .container article {
