@@ -8,26 +8,29 @@
             <figure id="login-image">
                 <img class="logo" src="images/wizard.png" alt="">
             </figure>
-                <div class="login">
-                    <div class="card">
-                        <h1>Inloggen</h1>
-                        <form action="" method="post">
-                            <div class="form-input">
-                                <label for="username">Gebruikersnaam</label>
-                                <input type="text" name="username" id="username" required>
-                            </div>
-                            <div class="form-input">
-                                <label for="password">Wachtwoord</label>
-                                <input type="password" name="password" id="password" required>
-                            </div>
-                            <div class="form-input">
-                                <input type="checkbox" name="remember" id="remember">
-                                <label for="remember">Onthoud mij</label>
-                            </div>
-                            <input type="submit" value="Inloggen" class="btn">
-                        </form>
-                    </div>
-                </div>
+    <div class="login">
+        <form class="login-form" action="">
+            <div class="form-header">
+                <h3>Inloggen</h3>
+            </div>
+            <!--Email Input-->
+            <div class="form-group">
+                <input type="text" class="form-input" placeholder="email@example.com">
+            </div>
+            <!--Password Input-->
+            <div class="form-group">
+                <input type="password" class="form-input" placeholder="password">
+            </div>
+            <!--Login Button-->
+            <div class="form-group">
+                <button class="form-button" type="submit">Inloggen</button>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" name="remember" id="remember">
+                <label for="remember">Onthoud mij</label>
+            </div>
+        </form>
+    </div><!--/.wrap-->
         </main>
         <%- include("partials/footer") %>
     </body>
