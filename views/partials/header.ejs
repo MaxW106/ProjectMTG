@@ -1,9 +1,18 @@
 <header>
-    <nav>
+    <nav class="nav">
         <ul>
-            <% pages.forEach(page => { %>
-            <a href="<%= page %>"><li><%= page %></li></a>
-            <% }) %>
+            <li>
+                <a href="../home/home.html" class="uppernav">Home</a>
+            </li>
+            <li>
+                <a href="../decks/decks.html" class="uppernav">Decks</a>
+            </li>
+            <li>
+                <a href="../drawtest/drawtest.html" class="uppernav">Drawtest</a>
+            </li>
+            <li id="loginnav">
+                <a href="../login/login.html" class="uppernav">Login</a>
+            </li>
         </ul>
     </nav>
 </header>

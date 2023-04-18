@@ -11,7 +11,7 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
-	res.redirect("home");
+	res.render("home1");
 });
 
 app.get("/home", (req, res) => {
