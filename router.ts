@@ -25,6 +25,9 @@ app.get("/decks", (req, res) => {
 app.get("/drawtest", (req, res) => {
 	res.render("drawtest", { pages: pages_logged_in });
 });
+app.get("/login", (req, res) => {
+	res.render("login", { pages: pages_logged_in });
+});
 
 app.get("/*", (req, res) => {
 	res.status(404);

@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include("partials/head", { title: "404: PAGE NOT FOUND"}) %>
+    <%- include("partials/head", { title: "Decks"}) %>
+    
     <body>
-        <%- include("partials/header", { pages: pages }) %>
+        <header><%- include("partials/header") -%></header>
         <main>
-            <h1>Decks</h1>
+            <section class="container">
+                <% for(let i =0;i < 5;i++){ %>
+                    <article class="wrapper">
+                        <a href="deck.html"><img src="images/tree.jpg">
+                    <figcaption>DeckName</figcaption>
+                    </article>
+                <%}%>
         </main>
         <%- include("partials/footer") %>
     </body>
