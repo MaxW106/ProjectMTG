@@ -2,6 +2,8 @@ import express from "express";
 const path = require("path");
 const app = express();
 
+import db from "./db.json";
+
 let pages_logged_in = ["home", "decks", "drawtest"];
 let pages_not_logged_in = ["home"];
 
@@ -15,7 +17,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/home", (req, res) => {
-	res.render("home", { pages: pages_logged_in });
+	res.render("home", { pages: pages_logged_in, cards: db.cards });
 });
 
 app.get("/decks", (req, res) => {
