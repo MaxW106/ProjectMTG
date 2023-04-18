@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("partials/head", { title: "Decks"}) %>
+    
+    <body>
+        <header><%- include("partials/header") -%></header>
+        <main>
+            <section class="container">
+                <% for(let i =0;i < 5;i++){ %>
+                    <article class="wrapper">
+                        <a href="deck.html"><img src="images/tree.jpg">
+                    <figcaption>DeckName</figcaption>
+                    </article>
+                <%}%>
+        </main>
+        <%- include("partials/footer") %>
+    </body>
+</html>

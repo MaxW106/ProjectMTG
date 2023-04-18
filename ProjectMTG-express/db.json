@@ -1,0 +1,126 @@
+{
+	"cards": [
+		{
+			"name": "Deathmark",
+			"multiverseid": "129910",
+			"type": "Sorcery",
+			"imageurl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=129910&type=card",
+			"set": "10E",
+			"setName": "Tenth Edition",
+			"number": "134",
+			"rarity": "Uncommon",
+			"text": "Destroy target green or white creature.",
+			"flavor": "\"I hope it's true that every snowflake is unique, because I never want to see one like this again. Now clean up that body.\"\n—Thangbrand Gyrdsson, Kjeldoran patrol"
+		},
+		{
+			"name": "Death Ward",
+			"multiverseid": "846",
+			"type": "Instant",
+			"imageurl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=846&type=card",
+			"set": "2ED",
+			"setName": "Unlimited Edition",
+			"number": "18",
+			"rarity": "Common",
+			"text": "Regenerate target creature."
+		},
+		{
+			"name": "Deathgrip",
+			"multiverseid": "653",
+			"type": "Enchantment",
+			"imageurl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=653&type=card",
+			"set": "2ED",
+			"setName": "Unlimited Edition",
+			"number": "101",
+			"rarity": "Uncommon",
+			"text": "{B}{B}: Counter target green spell."
+		},
+		{
+			"name": "Deathlace",
+			"multiverseid": "654",
+			"type": "Instant",
+			"imageurl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=654&type=card",
+			"set": "2ED",
+			"setName": "Unlimited Edition",
+			"number": "102",
+			"rarity": "Rare",
+			"text": "Target spell or permanent becomes black. (Mana symbols on that permanent remain unchanged.)"
+		},
+		{
+			"name": "Strands of Undeath",
+			"multiverseid": "571425",
+			"type": "Enchantment — Aura",
+			"imageurl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=571425&type=card",
+			"set": "2X2",
+			"setName": "Double Masters 2022",
+			"number": "92",
+			"rarity": "Common",
+			"text": "Enchant creature\nWhen Strands of Undeath enters the battlefield, target player discards two cards.\n{B}: Regenerate enchanted creature.",
+			"flavor": "\"Why limit yourself to mortal law when you can outlive those who enforce it?\"\n—Czaric, Orzhov prelate"
+		},
+		{
+			"name": "Horseshoe Crab",
+			"multiverseid": "129596",
+			"type": "Creature — Crab",
+			"imageurl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=129596&type=card",
+			"set": "10E",
+			"setName": "Tenth Edition",
+			"number": "87",
+			"rarity": "Common",
+			"text": "{U}: Untap Horseshoe Crab.",
+			"flavor": "\"Hmm . . . It looks kinda like a bug. Let's crack it open an' see if it tastes like one!\"\n—Squee, goblin cabin hand"
+		},
+		{
+			"name": "Cement Shoes",
+			"multiverseid": "555436",
+			"type": "Artifact — Equipment",
+			"imageurl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=555436&type=card",
+			"set": "SNC",
+			"setName": "Streets of New Capenna",
+			"number": "235",
+			"rarity": "Uncommon",
+			"text": "Equipped creature gets +3/+3 and has \"At the beginning of your end step, tap this creature.\"\n\"Equipped creature doesn't untap during its controller's untap step.\"\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)"
+		},
+		{
+			"name": "Shoe Tree",
+			"multiverseid": "74332",
+			"type": "Creature — Treefolk",
+			"imageurl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=74332&type=card",
+			"set": "UNH",
+			"setName": "Unhinged",
+			"number": "109",
+			"rarity": "Common",
+			"text": "Shoe Tree enters the battlefield with up to two shoe counters on it. Use your shoes as counters.\nShoe Tree gets +1/+1 for each shoe counter on it.",
+			"flavor": "It grows several feet a year."
+		},
+		{
+			"name": "Scathe Zombies",
+			"multiverseid": "129718",
+			"type": "Creature — Zombie",
+			"imageurl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=129718&type=card",
+			"set": "10E",
+			"setName": "Tenth Edition",
+			"number": "175",
+			"rarity": "Common",
+			"flavor": "\"They groaned, they stirred, they all uprose, Nor spake, nor moved their eyes; It had been strange, even in a dream, To have seen those dead men rise.\"\n—Samuel Taylor Coleridge, \"The Rime of the Ancient Mariner\""
+		},
+		{
+			"name": "Cathartic Reunion",
+			"multiverseid": "489794",
+			"type": "Sorcery",
+			"imageurl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=489794&type=card",
+			"set": "2XM",
+			"setName": "Double Masters",
+			"number": "121",
+			"rarity": "Common",
+			"text": "As an additional cost to cast this spell, discard two cards.\nDraw three cards.",
+			"flavor": "The chasm of years and worlds collapsed under the power of their embrace."
+		}
+	],
+	"decks": [
+		{
+			"name": "",
+			"imageurl": "",
+			"cards": []
+		}
+	]
+}
