@@ -32,7 +32,7 @@ body {
 	padding: 20px;
 	margin: -8px;
 	margin-bottom: 1.1rem;
-	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+	font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
 		sans-serif;
 }
 
@@ -128,11 +128,17 @@ form button {
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
+	flex-direction: column;
+    min-height: 100vh;
+    overflow-y: scroll;
+	font-size: 1rem;
+    line-height: 1.4;
+	margin: 0;
 }
 
 label {
 	font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-		"Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+		"Lucida Sans Unicode", "Geneva", Verdana, sans-serif;
 }
 
 .card {
@@ -148,7 +154,7 @@ label {
 	font-weight: bold;
 	margin-bottom: 20px;
 	font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-		"Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+		"Lucida Sans Unicode", "Geneva", Verdana, sans-serif;
 }
 
 .form-input {
