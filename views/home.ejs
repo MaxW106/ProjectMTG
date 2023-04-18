@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include("partials/head", {title: "home"}) %>
-    <body>
-        <%- include("partials/header", { pages: ['home', 'decks', 'drawtest'] }
-        ) %>
-        <main>
-            <h1>Home</h1>
-        </main>
-        <%- include("partials/footer") %>
-    </body>
+	<%- include("partials/head", {title: "home"}) %>
+	<body>
+		<%- include("partials/header", { pages: pages } ) %>
+		<main>
+			<h1>Home</h1>
+		</main>
+		<%- include("partials/footer") %>
+	</body>
 </html>

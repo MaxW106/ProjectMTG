@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include("partials/head", {title: "home"}) %>
+	<%- include("partials/head", {title: "home"}) %>
 
-<body>
-    <header>
-        <%- include("partials/header") -%>
-    </header>
-    <main>
-        <form action="#" method="GET">
-            <input
-                type="search"
-                name="searchTerm"
-                id="searchInput"
-                placeholder="Cardname"
-            />
-            <button>Search</button>
-        </form>
+	<body>
+		<header><%- include("partials/header") -%></header>
+		<main>
+			<form action="#" method="GET">
+				<input
+					type="search"
+					name="searchTerm"
+					id="searchInput"
+					placeholder="Cardname"
+				/>
+				<button>Search</button>
+			</form>
 
         <section class="container">
             <% for (let i = 0; i < 10; i++) { %>
