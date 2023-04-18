@@ -11,7 +11,7 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
-	res.render("home1", { pages: pages_logged_in });
+	res.redirect("/home");
 });
 
 app.get("/home", (req, res) => {
