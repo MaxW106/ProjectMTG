@@ -208,7 +208,7 @@ img.logo {
 	display: grid;
 	gap: 1.5rem;
 	grid-template-columns: repeat(3,1fr);
-	grid-template-rows: repeat(4,1fr);
+	grid-template-rows: repeat(3,1fr);
 }
 
 .deck-choser-grid{
@@ -216,12 +216,13 @@ img.logo {
 	grid-row: 1;
 
 	margin-left: auto;
-	margin-top: auto;
+	margin-bottom: auto;
 
 	align-self: center;
 	justify-self: center;
+	text-align: center;
 
-	height: 80px;
+	height: 60px;
 	width: 250px;
 	
 	border-style: solid;
@@ -233,14 +234,14 @@ img.logo {
 
 .drawpercentage-grid{
 	grid-column: 1;
-	grid-row: 2;
+	grid-row: 1;
 	margin-left: auto;
-	margin-bottom: auto;
+	margin-top: auto;
 
 	align-self: center;
 	justify-self: center;
 
-	height: 50px;
+	height: 43px;
 	width: 240px;
 
 	border-style: solid;
@@ -251,10 +252,15 @@ img.logo {
 
 .track-grid{
 	grid-column: 2;
-	grid-row: 2;
+	grid-row: 1;
+	margin-right: auto;
+	margin-bottom: auto;
 
 	align-self: center;
 	justify-self: center;
+
+	height: 50px;
+	width: 100px;
 
 	border-style: solid;
 	border-width: 3px;
@@ -263,28 +269,34 @@ img.logo {
 }
 
 .drawpercentage-display-grid{
-	grid-column: 3;
-	grid-row: 2;
+	grid-column: 2;
+	grid-row: 1;
+	margin-bottom: 1rem;
+	margin-right: 22rem;
 
 	align-self: center;
 	justify-self: center;
 
-	color: white;
 
 	border-style: solid;
 	border-width: 3px;
 	border-color: black;
 	border-radius: 5px;
+	background-color: white;
+	background-clip: padding-box;
 }
 
 .drawpile-grid{
-	grid-column-start: 1;
-	grid-row-start: 3;
-	grid-row-end: 4;
-	margin-left: 2rem;
+	grid-column: 1;
+	grid-row: 2;
+	margin-left: auto;
+	margin-bottom: auto;
 
 	align-self: center;
 	justify-self: center;
+
+	height: 310px;
+	width: 210px;
 
 	border-style: solid;
 	border-width: 3px;
@@ -294,7 +306,8 @@ img.logo {
 
 .btn-draw-grid{
 	grid-column: 2;
-	grid-row: 3;
+	grid-row: 2;
+	margin-bottom: auto;
 
 	align-self: center;
 	justify-self: center;
@@ -307,7 +320,8 @@ img.logo {
 
 .btn-reset-grid{
 	grid-column: 2;
-	grid-row: 4;
+	grid-row: 2;
+	margin-top: auto;
 
 	align-self: center;
 	justify-self: center;
@@ -319,12 +333,15 @@ img.logo {
 }
 
 .discardpile-grid{
-	grid-column: 3;
-	grid-row-start: 3;
-	grid-row-end: 4;
+	grid-column: 2;
+	grid-row: 2;
+	margin-left: auto;
 
 	align-self: center;
 	justify-self: center;
+
+	height: 310px;
+	width: 210px;
 
 	border-style: solid;
 	border-width: 3px;
