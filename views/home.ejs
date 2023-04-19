@@ -3,13 +3,12 @@
 	<%- include("partials/head", {title: "home"}) %>
 
 	<body>
-		
 		<header><%- include("partials/header") -%></header>
 		<main>
 			<form action="#" method="GET">
 				<input
 					type="search"
-					name="searchTerm"
+					name="searchString"
 					id="searchInput"
 					placeholder="Cardname"
 				/>
@@ -17,7 +16,7 @@
 			</form>
 
 			<section class="container">
-				<% for (let i = 0; i < 10; i++) { %> <%-
+				<% for (let i = 0; i < Math.min(cards.length, 10); i++) { %> <%-
 				include("partials/card", {card: cards[i]}) %> <%} %>
 			</section>
 			<div>

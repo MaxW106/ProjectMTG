@@ -10,12 +10,29 @@ app.set("port", 3000);
 app.set("view engine", "ejs");
 
 app.use(express.static(path.join(__dirname, "public")));
+
 app.get("/", (req, res) => {
 	res.redirect("/home");
 });
 
 app.get("/home", (req, res) => {
-	res.render("home", { pages: pages_logged_in, cards: db.cards });
+	res.type("html");
+
+	let searchString = req.query.searchString as string;
+
+	let cards: any[] = [];
+
+	if (searchString !== "") {
+		cards = db.cards.filter((card, index, array) => {
+			return card.name.toLowerCase().includes(searchString);
+		});
+	} else {
+		cards = db.cards.slice(0, 10);
+	}
+
+	cards.forEach((card) => console.log(card.name));
+
+	res.render("home", { pages: pages_logged_in, cards: cards });
 });
 
 app.get("/decks", (req, res) => {

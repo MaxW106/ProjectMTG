@@ -114,6 +114,28 @@
 			"rarity": "Common",
 			"text": "As an additional cost to cast this spell, discard two cards.\nDraw three cards.",
 			"flavor": "The chasm of years and worlds collapsed under the power of their embrace."
+		},
+		{
+			"name": "Death Ward",
+			"multiverseid": "846",
+			"type": "Instant",
+			"imageurl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=846&type=card",
+			"set": "2ED",
+			"setName": "Unlimited Edition",
+			"number": "18",
+			"rarity": "Common",
+			"text": "Regenerate target creature."
+		},
+		{
+			"name": "Deathgrip",
+			"multiverseid": "653",
+			"type": "Enchantment",
+			"imageurl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=653&type=card",
+			"set": "2ED",
+			"setName": "Unlimited Edition",
+			"number": "101",
+			"rarity": "Uncommon",
+			"text": "{B}{B}: Counter target green spell."
 		}
 	],
 	"decks": [
