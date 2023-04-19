@@ -16,6 +16,11 @@ body {
 	text-align: center;
 }
 
+.wrapper a{
+	text-decoration: none;
+	color: white;
+}
+
 .boven figcaption {
 	text-decoration: none;
 }
@@ -46,10 +51,6 @@ body {
 
 .nav li {
 	margin: 0 10px;
-}
-
-a {
-	text-decoration: none;
 }
 
 .nav a {
@@ -216,7 +217,7 @@ img.logo {
 	grid-row: 1;
 
 	margin-right: auto;
-	margin-top: 5rem;
+	margin-top: 7rem;
 
 	align-self: center;
 	justify-self: center;
@@ -261,6 +262,8 @@ img.logo {
 
 	height: 50px;
 	width: 100px;
+	background-color: #a20da2;
+	color: white;
 
 	border-style: solid;
 	border-width: 3px;
@@ -304,6 +307,8 @@ img.logo {
 
 	height: 60px;
 	width: 80px;
+	background-color: #a20da2;
+	color: white;
 
 	border-style: solid;
 	border-width: 3px;
@@ -322,6 +327,8 @@ img.logo {
 
 	height: 60px;
 	width: 80px;
+	background-color: #a20da2;
+	color: white;
 
 
 	border-style: solid;
@@ -342,4 +349,4 @@ img.logo {
 	width: 210px;
 
 }
-
+/*einde drawtest css*/
