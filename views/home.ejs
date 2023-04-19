@@ -16,20 +16,8 @@
 			</form>
 
 			<section class="container">
-				<% for (let i = 0; i < 10; i++) { %>
-				<article>
-					<figure>
-						<a href="#"
-							><img
-								src="<%= cards[i].imageurl %>"
-								alt="<%= cards[i].name %>"
-								class=""
-						/></a>
-						<figcaption></figcaption>
-					</figure>
-				</article>
-
-				<%} %>
+				<% for (let i = 0; i < 10; i++) { %> <%-
+				include("partials/card", {card: cards[i]}) %> <%} %>
 			</section>
 			<div>
 				<img src="" alt="" />
