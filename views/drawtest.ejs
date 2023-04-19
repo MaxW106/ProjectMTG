@@ -4,24 +4,22 @@
     <body>
         <header><%- include("partials/header", { pages: pages }) %></header>
         <main>
-            <label for="deck_choser"> deck to pick</label>
+            <div class="drawtest-grid">
+                <select name="deck-choser" class="deck-choser-grid">
+                    <option value="deck_1">deck1</option>
+                    <option value="deck_2">deck2</option>
+                    <option value="deck_3">deck3</option>
+                </select>
+            
+                <input class="drawpercentage-grid" type="drawpercentage">
+                <button class = "track-grid" class="track" type="track">track</button>
+                <p class="drawpercentage-display-grid">drawpercentage</p>
 
-    <select name="deck_choser" id="deck_choser">
-        <option value="deck_1">deck1</option>
-        <option value="deck_2">deck2</option>
-        <option value="deck_3">deck3</option>
-    </select>
-
-    <input type="drawpercentage">
-
-    <button type="track">track</button>
-
-    <p id="drawpercentage">drawpercentage</p>
-    <img class="drawpile"src="\afbeeldingen\.png"alt="drawpile"></a>
-    <img class="discardpile"src="\afbeeldingen\.png"alt="discardpile"></a>
-
-    <button type="draw">draw</button>
-    <button type="rese">reset</button>
+                <img class="drawpile-grid" src=""alt="drawpile"></a>
+                <button class="btn-draw-grid" type="draw">draw</button>
+                <button class="btn-reset-grid" type="reset">reset</button>
+                <img class="discardpile-grid" src=""alt="discardpile"></a>
+            </div>
         </main>
         <%- include("partials/footer") %>
     </body>

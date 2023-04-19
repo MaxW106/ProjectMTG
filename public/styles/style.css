@@ -122,7 +122,6 @@ form button {
 }
 
 /*Voor de opmaak van de login */
-
 .login {
 	display: flex;
 	justify-content: center;
@@ -201,3 +200,136 @@ img.logo {
 .hidden {
 	display: none;
 }
+
+
+/*drawtest css*/
+
+.drawtest-grid{
+	display: grid;
+	gap: 1.5rem;
+	grid-template-columns: repeat(3,1fr);
+	grid-template-rows: repeat(4,1fr);
+}
+
+.deck-choser-grid{
+	grid-column: 1;
+	grid-row: 1;
+
+	margin-left: auto;
+	margin-top: auto;
+
+	align-self: center;
+	justify-self: center;
+
+	height: 80px;
+	width: 250px;
+	
+	border-style: solid;
+	border-width: 3px;
+	border-color: black;
+	border-radius: 5px;
+
+}
+
+.drawpercentage-grid{
+	grid-column: 1;
+	grid-row: 2;
+	margin-left: auto;
+	margin-bottom: auto;
+
+	align-self: center;
+	justify-self: center;
+
+	height: 50px;
+	width: 240px;
+
+	border-style: solid;
+	border-width: 3px;
+	border-color: black;
+	border-radius: 5px;
+}
+
+.track-grid{
+	grid-column: 2;
+	grid-row: 2;
+
+	align-self: center;
+	justify-self: center;
+
+	border-style: solid;
+	border-width: 3px;
+	border-color: black;
+	border-radius: 5px;
+}
+
+.drawpercentage-display-grid{
+	grid-column: 3;
+	grid-row: 2;
+
+	align-self: center;
+	justify-self: center;
+
+	color: white;
+
+	border-style: solid;
+	border-width: 3px;
+	border-color: black;
+	border-radius: 5px;
+}
+
+.drawpile-grid{
+	grid-column-start: 1;
+	grid-row-start: 3;
+	grid-row-end: 4;
+	margin-left: 2rem;
+
+	align-self: center;
+	justify-self: center;
+
+	border-style: solid;
+	border-width: 3px;
+	border-color: black;
+	border-radius: 5px;
+}
+
+.btn-draw-grid{
+	grid-column: 2;
+	grid-row: 3;
+
+	align-self: center;
+	justify-self: center;
+
+	border-style: solid;
+	border-width: 3px;
+	border-color: black;
+	border-radius: 5px;
+}
+
+.btn-reset-grid{
+	grid-column: 2;
+	grid-row: 4;
+
+	align-self: center;
+	justify-self: center;
+
+	border-style: solid;
+	border-width: 3px;
+	border-color: black;
+	border-radius: 5px;
+}
+
+.discardpile-grid{
+	grid-column: 3;
+	grid-row-start: 3;
+	grid-row-end: 4;
+
+	align-self: center;
+	justify-self: center;
+
+	border-style: solid;
+	border-width: 3px;
+	border-color: black;
+	border-radius: 5px;
+	
+}
+
