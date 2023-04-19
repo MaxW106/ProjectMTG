@@ -208,15 +208,15 @@ img.logo {
 	display: grid;
 	gap: 1.5rem;
 	grid-template-columns: repeat(3,1fr);
-	grid-template-rows: repeat(3,1fr);
+	grid-template-rows: repeat(2,1fr);
 }
 
 .deck-choser-grid{
-	grid-column: 1;
+	grid-column: 2;
 	grid-row: 1;
 
-	margin-left: auto;
-	margin-bottom: auto;
+	margin-right: auto;
+	margin-top: 5rem;
 
 	align-self: center;
 	justify-self: center;
@@ -233,9 +233,9 @@ img.logo {
 }
 
 .drawpercentage-grid{
-	grid-column: 1;
+	grid-column: 2;
 	grid-row: 1;
-	margin-left: auto;
+	margin-right: auto;
 	margin-top: auto;
 
 	align-self: center;
@@ -253,8 +253,8 @@ img.logo {
 .track-grid{
 	grid-column: 2;
 	grid-row: 1;
-	margin-right: auto;
-	margin-bottom: auto;
+	margin-right: 0.5rem;
+	margin-top: auto;
 
 	align-self: center;
 	justify-self: center;
@@ -271,25 +271,19 @@ img.logo {
 .drawpercentage-display-grid{
 	grid-column: 2;
 	grid-row: 1;
+	margin-top: auto;
+	margin-left: 10rem;
 	margin-bottom: 1rem;
-	margin-right: 22rem;
 
 	align-self: center;
 	justify-self: center;
-
-
-	border-style: solid;
-	border-width: 3px;
-	border-color: black;
-	border-radius: 5px;
-	background-color: white;
-	background-clip: padding-box;
+	color: white;
 }
 
 .drawpile-grid{
-	grid-column: 1;
+	grid-column: 2;
 	grid-row: 2;
-	margin-left: auto;
+	margin-right: auto;
 	margin-bottom: auto;
 
 	align-self: center;
@@ -297,20 +291,19 @@ img.logo {
 
 	height: 310px;
 	width: 210px;
-
-	border-style: solid;
-	border-width: 3px;
-	border-color: black;
-	border-radius: 5px;
 }
 
 .btn-draw-grid{
 	grid-column: 2;
 	grid-row: 2;
 	margin-bottom: auto;
+	margin-top: 5rem;
 
 	align-self: center;
 	justify-self: center;
+
+	height: 60px;
+	width: 80px;
 
 	border-style: solid;
 	border-width: 3px;
@@ -322,9 +315,14 @@ img.logo {
 	grid-column: 2;
 	grid-row: 2;
 	margin-top: auto;
+	margin-bottom: 5rem;
 
 	align-self: center;
 	justify-self: center;
+
+	height: 60px;
+	width: 80px;
+
 
 	border-style: solid;
 	border-width: 3px;
@@ -343,10 +341,5 @@ img.logo {
 	height: 310px;
 	width: 210px;
 
-	border-style: solid;
-	border-width: 3px;
-	border-color: black;
-	border-radius: 5px;
-	
 }
 
