@@ -26,7 +26,8 @@ app.get("/home", (req, res) => {
 		cards = db.cards.filter((card, index, array) => {
 			return card.name.toLowerCase().includes(searchString);
 		});
-	} else {
+	}
+	if (cards.length == 0) {
 		cards = db.cards.slice(0, 10);
 	}
 
