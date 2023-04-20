@@ -6,34 +6,12 @@
         <header><%- include("partials/header") -%></header>
         <main>
             <section class="container">
-                <!--
-                <% for(let i =0;i < 5;i++){ %>
+                <% for(let i = 0; i < 5; i++){ %>
                     <article class="wrapper">
-                        <a href="deck.html"><img src="images/tree.jpg">
-                    <figcaption>DeckName</figcaption>
+                        <a href="deck.html"><img src="images/card-back.png">
+                    <figcaption>Deck <%= i + 1%></figcaption>
                     </article>
                 <%}%>
-                -->
-                <article class="wrapper">
-                    <a href="deck.html"><img src="images/card-front.jpeg">
-                <figcaption>Deck 1</figcaption>
-                </article>
-                <article class="wrapper">
-                    <a href="deck.html"><img src="images/card-front.jpeg">
-                <figcaption>Deck 2</figcaption>
-                </article>
-                <article class="wrapper">
-                    <a href="deck.html"><img src="images/card-front.jpeg">
-                <figcaption>Deck 3</figcaption>
-                </article>
-                <article class="wrapper">
-                    <a href="deck.html"><img src="images/card-front.jpeg">
-                <figcaption>Deck 4</figcaption>
-                </article>
-                <article class="wrapper">
-                    <a href="deck.html"><img src="images/card-front.jpeg">
-                <figcaption>Deck 5</figcaption>
-                </article>
         </main>
         <%- include("partials/footer") %>
     </body>
