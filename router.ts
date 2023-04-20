@@ -31,7 +31,6 @@ app.get("/home", (req, res) => {
 		cards = db.cards.slice(0, 10);
 	}
 
-	cards.forEach((card) => console.log(card.name));
 
 	res.render("home", { pages: pages_logged_in, cards: cards });
 });
