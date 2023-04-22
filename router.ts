@@ -12,7 +12,7 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
-	res.redirect("/home");
+	res.render("landingpage");
 });
 
 app.get("/home", (req, res) => {
@@ -30,7 +30,6 @@ app.get("/home", (req, res) => {
 	if (cards.length == 0) {
 		cards = db.cards.slice(0, 10);
 	}
-
 
 	res.render("home", { pages: pages_logged_in, cards: cards });
 });
