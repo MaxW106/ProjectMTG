@@ -11,48 +11,46 @@ app.set("view engine", "ejs");
 
 app.use(express.static(path.join(__dirname, "public")));
 
-app.get("/", (req, res) => {
-	res.render("landingpage");
+app.get("/decks", (req, res) => {
+  res.render("decks", { pages: pages_logged_in });
 });
 
 app.get("/home", (req, res) => {
-	res.type("html");
+  res.type("html");
 
-	let searchString = req.query.searchString as string;
+  let searchString = req.query.searchString as string;
 
-	let cards: any[] = [];
+  let cards: any[] = [];
 
-	if (searchString !== "") {
-		cards = db.cards.filter((card, index, array) => {
-			return card.name.toLowerCase().includes(searchString);
-		});
-	}
-	if (cards.length == 0) {
-		cards = db.cards.slice(0, 10);
-	}
+  if (searchString !== "") {
+    cards = db.cards.filter((card, index, array) => {
+      return card.name.toLowerCase().includes(searchString);
+    });
+  }
+  if (cards.length == 0) {
+    cards = db.cards.slice(0, 10);
+  }
 
-	res.render("home", { pages: pages_logged_in, cards: cards });
+  res.render("home", { pages: pages_logged_in, cards: cards });
 });
 
 app.get("/decks", (req, res) => {
-	res.render("decks", { pages: pages_logged_in });
+  res.render("decks", { pages: pages_logged_in });
 });
 
 app.get("/drawtest", (req, res) => {
-	res.render("drawtest", { pages: pages_logged_in });
+  res.render("drawtest", { pages: pages_logged_in });
 });
 
 app.get("/login", (req, res) => {
-	res.render("login", { pages: pages_logged_in });
+  res.render("login", { pages: pages_logged_in });
 });
 
 app.get("/*", (req, res) => {
-	res.status(404);
-	res.render("404", { pages: pages_logged_in });
+  res.status(404);
+  res.render("404", { pages: pages_logged_in });
 });
 
 app.listen(app.get("port"), () => {
-	console.log(
-		`Web application running at http://localhost:${app.get("port")}`
-	);
+  console.log(`Web application running at http://localhost:${app.get("port")}`);
 });
