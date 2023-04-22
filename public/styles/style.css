@@ -352,23 +352,19 @@ img.logo {
 /*einde drawtest css*/
 
 /*Landing page*/
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Brush Script MT", cursive;
-  }
-  
-  body {
-    background-color: skyblue;
-  }
-  
-  .container {
+
+  .container-landing{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     height: 100vh;
+	background-color: skyblue;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Brush Script MT", cursive;
+
   }
   
   .box-left {
