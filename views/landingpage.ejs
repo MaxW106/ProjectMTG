@@ -1,55 +1,55 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Project Landing Page</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-  <body>
-    <div class="container">
-      <div class="box-left">
-        <a href="home.ejs">
-          <img src="images/Mtg.jpg" alt="MTG">
-          <h2>MTG</h2>
-        </a>
-      </div>
-      <div class="box-right">
-        <div class="box">
-          <a href="#">
-            <img src="images/Fortnite.jpg" alt="Fortnite">
-            <h2>Fortnite</h2>
-          </a>
-        </div>
-        <div class="box">
-          <a href="#">
-            <img src="images/Fifa.jpg" alt="Fifa">
-            <h2>Fifa</h2>
-          </a>
-        </div>
-        <div class="box">
-          <a href="#">
-            <img src="images/Pokemon.jpeg" alt="Pokemon">
-            <h2>Pokemon</h2>
-          </a>
-        </div>
-        <div class="box">
-          <a href="#">
-            <img src="https://via.placeholder.com/300x300" alt="NBB">
-            <h2>NBB</h2>
-          </a>
-        </div>
-        <div class="box">
-          <a href="#">
-            <img src="images/Lotr.jpg" alt="LOTR">
-            <h2>LOTR</h2>
-          </a>
-        </div>
-        <div class="box">
-          <a href="images/LegoMasters.jpeg">
-            <img src="#" alt="LegoMasters">
-            <h2>LegoMasters</h2>
-          </a>
-        </div>
-      </div>
-    </div>
-  </body>
+	<%- include("partials/head", {title: "landing page"}) %>
+	<body>
+		<div class="container">
+			<div class="box-left">
+				<a href="home">
+					<img src="images/Mtg.jpg" alt="MTG" />
+					<h2>MTG</h2>
+				</a>
+			</div>
+			<div class="box-right">
+				<div class="box">
+					<a href="#">
+						<img src="images/Fortnite.jpg" alt="Fortnite" />
+						<h2>Fortnite</h2>
+					</a>
+				</div>
+				<div class="box">
+					<a href="#">
+						<img src="images/Fifa.jpg" alt="Fifa" />
+						<h2>Fifa</h2>
+					</a>
+				</div>
+				<div class="box">
+					<a href="#">
+						<img src="images/Pokemon.jpeg" alt="Pokemon" />
+						<h2>Pokemon</h2>
+					</a>
+				</div>
+				<div class="box">
+					<a href="#">
+						<img
+							src="https://via.placeholder.com/300x300"
+							alt="NBB"
+						/>
+						<h2>NBB</h2>
+					</a>
+				</div>
+				<div class="box">
+					<a href="#">
+						<img src="images/Lotr.jpg" alt="LOTR" />
+						<h2>LOTR</h2>
+					</a>
+				</div>
+				<div class="box">
+					<a href="#">
+						<img src="#" alt="LegoMasters" />
+						<h2>LegoMasters</h2>
+					</a>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
