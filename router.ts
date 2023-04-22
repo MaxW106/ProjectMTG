@@ -11,17 +11,15 @@ app.set("view engine", "ejs");
 
 app.use(express.static(path.join(__dirname, "public")));
 
-app.get("/decks", (req, res) => {
-  res.render("decks", { pages: pages_logged_in });
+app.get("/", (req, res) => {
+  res.redirect("/home");
+  res.render("landingpage");
 });
 
 app.get("/home", (req, res) => {
   res.type("html");
-
   let searchString = req.query.searchString as string;
-
   let cards: any[] = [];
-
   if (searchString !== "") {
     cards = db.cards.filter((card, index, array) => {
       return card.name.toLowerCase().includes(searchString);
