@@ -302,7 +302,7 @@
 	"decks": [
 		{
 			"name": "Deck one",
-			"imageurl": "public/images/ale_mug.png",
+			"imageurl": "images/ale_mug.png",
 			"cards": [
 				{
 					"id": "129910",
