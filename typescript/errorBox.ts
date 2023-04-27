@@ -1,3 +1,5 @@
+import { error } from "console";
+
 // Definieer een functie die een error box maakt
 function showErrorBox(message: string): void {
     const errorBox = document.createElement("div");
@@ -7,9 +9,9 @@ function showErrorBox(message: string): void {
   }
   
   // Roep de functie aan wanneer er op een knop wordt gedrukt
-  const btn = document.querySelector("a");
-  if(btn != null){
-  btn.addEventListener("click", () => {
+  const a = document.querySelector("a");
+  if(a != null){
+  a.addEventListener("click", () => {
     // Simuleer een error
     const errorMessage = "Er is iets fout gegaan.";
   
