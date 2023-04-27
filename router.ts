@@ -18,6 +18,7 @@ app.get("/", (req, res) => {
 app.get("/home", (req, res) => {
 	res.type("html");
 	let searchString = req.query.searchString as string;
+	if (!searchString) searchString = "";
 	let cards: any[] = [];
 	if (searchString !== "") {
 		cards = db.cards.filter((card, index, array) => {
