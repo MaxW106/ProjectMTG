@@ -1,5 +1,5 @@
-import { error } from "console";
-
+let errorbox = document.getElementById("error-box")
+/*
 class ErrorBox {
 	constructor(className) {
 	  this.elements = document.getElementsByClassName(className);
@@ -35,15 +35,17 @@ class ErrorBox {
 	hideBox() {
 	  this.box.style.display = 'none';
 	}
-  }
+  }*/
 
-/*
+
 // Definieer een functie die een error box maakt
 function showErrorBox(message) {
     const errorBox = document.createElement("div");
-    errorBox.classList.add("error-box");
+    /* errorBox.classList.add("error-box"); */
     errorBox.textContent = message;
+	console.log(errorBox)
     document.body.appendChild(errorBox);
+
 }
 
 console.log("test test");
@@ -53,13 +55,12 @@ const a = document.querySelectorAll("a");
 a.forEach((element) => {
     element.addEventListener("click", () => {
         // Simuleer een error
-        const errorMessage = "Geen toegang tot deze pagina.";
-
+		errorbox.style.visibility ="visible"
         // Laat de error box zien
         showErrorBox(errorMessage);
     });
 });
-*/
+
 
 
   
