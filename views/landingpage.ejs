@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html> 
 	<head>
-		<script src="typescript/errorBox.ts"></script>
+		<script src="../typescript/errorBox.ts" defer></script>
 	</head>
 	<%- include("partials/head", {title: "landing page"}) %>
+	<script> if(document.getElementsByClassName("a")){showErrorBox(errorMessage);}</script>
 	<body>
 		<div class="container-landing">
 			<div class="box-left">
