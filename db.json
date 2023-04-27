@@ -301,7 +301,7 @@
 	],
 	"decks": [
 		{
-			"name": "Deck one",
+			"name": "This is a deck name",
 			"imageurl": "images/ale_mug.png",
 			"cards": [
 				{

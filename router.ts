@@ -13,7 +13,6 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
 	res.render("landingpage");
-	res.render("typescript/errorBox")
 });
 
 app.get("/home", (req, res) => {
@@ -36,7 +35,6 @@ app.get("/home", (req, res) => {
 		searchString: searchString,
 	});
 });
-
 
 app.get("/decks", (req, res) => {
 	res.render("decks", { pages: pages_logged_in });
