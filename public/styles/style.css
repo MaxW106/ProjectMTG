@@ -363,12 +363,18 @@ img.logo {
 	justify-content: space-between;
 	align-items: center;
 	height: 100vh;
-	background-color: skyblue;
+	background-color: #e81729;
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 	font-family: "Georgia (serif)";
 }
+
+#heading-Landing {
+	font-size: 28px;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;	
+	color: #1c0200;
+  }
 
 .box {
 	margin-bottom: 30px;
@@ -396,7 +402,7 @@ img.logo {
 	font-size: 24px;
 	font-weight: bold;
 }
-/*ending landing page*/
+
 #error-box{
 	visibility: hidden;
 		background-color: #f8d7da;
@@ -406,3 +412,5 @@ img.logo {
 		margin-bottom: 20px;
 	  
 }
+
+/*ending landing page*/
