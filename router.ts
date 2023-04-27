@@ -3,8 +3,8 @@ const path = require("path");
 const app = express();
 
 import db from "./db.json";
-let pages_logged_in = ["home", "decks", "drawtest"];
-let pages_not_logged_in = ["home"];
+let pages_logged_in = ["home", "decks", "drawtest", "login"];
+let pages_not_logged_in = ["home", "login"];
 
 app.set("port", 3000);
 app.set("view engine", "ejs");
@@ -29,7 +29,11 @@ app.get("/home", (req, res) => {
 		cards = db.cards.slice(0, 10);
 	}
 
-	res.render("home", { pages: pages_logged_in, cards: cards });
+	res.render("home", {
+		pages: pages_logged_in,
+		cards: cards,
+		searchString: searchString,
+	});
 });
 
 app.get("/decks", (req, res) => {
