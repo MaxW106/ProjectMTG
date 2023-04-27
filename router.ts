@@ -13,11 +13,7 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
-<<<<<<< HEAD
 	res.render("landingpage");
-=======
-  res.render("landingpage");
->>>>>>> 03abecd441336ff04e6da1337cf186682d4660af
 });
 
 app.get("/home", (req, res) => {
