@@ -21,7 +21,7 @@ app.get("/home", (req, res) => {
 	let cards: any[] = [];
 	if (searchString !== "") {
 		cards = db.cards.filter((card, index, array) => {
-			return card.name.toLowerCase().includes(searchString);
+			return card.name.toLowerCase().includes(searchString.toLowerCase());
 		});
 	}
 	if (cards.length == 0) {
