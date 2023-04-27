@@ -7,11 +7,13 @@ function showErrorBox(message: string): void {
   }
   
   // Roep de functie aan wanneer er op een knop wordt gedrukt
-  const button = document.querySelector("button");
-  button.addEventListener("click", () => {
+  const btn = document.querySelector("button");
+  if(btn != null){
+  btn.addEventListener("click", () => {
     // Simuleer een error
     const errorMessage = "Er is iets fout gegaan.";
   
     // Laat de error box zien
     showErrorBox(errorMessage);
-  });
+  
+  })};
