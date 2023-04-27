@@ -14,7 +14,6 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
   res.render("landingpage");
-  res.render("javascript/errorBox");
 });
 
 app.get("/home", (req, res) => {
