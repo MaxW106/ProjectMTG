@@ -7,7 +7,7 @@ function showErrorBox(message: string): void {
   }
   
   // Roep de functie aan wanneer er op een knop wordt gedrukt
-  const btn = document.querySelector("button");
+  const btn = document.querySelector("a");
   if(btn != null){
   btn.addEventListener("click", () => {
     // Simuleer een error
