@@ -9,7 +9,7 @@
 body {
 	background-color: var(--bg-color-grey);
 
-	min-height: 100vh;
+	max-height: 100vh;
 	display: flex;
 	flex-direction: column;
 }
@@ -364,16 +364,20 @@ img.logo {
 	align-items: center;
 	height: 100vh;
 	background-color: #e81729;
-	margin: 0;
-	padding: 0;
 	box-sizing: border-box;
-	font-family: "Georgia (serif)";
 }
 
 #heading-Landing {
 	font-size: 28px;
 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;	
 	color: #1c0200;
+  }
+
+  #a-Landing {
+	font-size: 28px;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;	
+	color: #1c0200;
+	text-decoration: none;
   }
 
 .box {
@@ -410,7 +414,13 @@ img.logo {
 		color: #721c24;
 		padding: 10px;
 		margin-bottom: 20px;
+		position: absolute;
 	  
+}
+
+#paragraph-Landing{
+
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 /*ending landing page*/
