@@ -38,7 +38,7 @@ class ErrorBox {
   }*/
 
 // Definieer een functie die een error box maakt
-function showErrorBox(message) {
+function addErrorBox(message) {
 	const errorBox = document.createElement("div");
 	/* errorBox.classList.add("error-box"); */
 	errorBox.textContent = message;
@@ -56,10 +56,7 @@ a.forEach((element) => {
 			// Simuleer een error
 			errorbox.style.animationName = "error";
 			// Laat de error box zien
-			//showErrorBox(errorMessage);
-			setTimeout(() => {
-				errorbox.style.animationName = "";
-			}, 4005);
+			addErrorBox("errorMessage");
 		});
 	}
 });

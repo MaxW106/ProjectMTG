@@ -395,6 +395,8 @@ img.logo {
 	height: 250px;
 
 	border-radius: 20px;
+
+	object-fit: cover;
 }
 
 .box h2 {
@@ -410,30 +412,37 @@ img.logo {
 #error-box {
 	background-color: #f8d7da;
 	border: 5px solid #a33a45;
+	border-radius: 5px;
 	color: #721c24;
 	padding: 10px;
 	margin-bottom: 20px;
 
+	animation-duration: 3s;
+	animation-name: error;
+}
+
+.error-container {
 	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+	top: 0;
+	right: 0;
 	z-index: 1;
-
-	opacity: 0;
-
-	animation-duration: 4s;
 }
 
 @keyframes error {
 	0% {
+		display: block;
 		opacity: 100;
 	}
 	75% {
 		opacity: 100;
+		display: block;
 	}
 	100% {
 		opacity: 0;
+		display: block;
+	}
+	100% {
+		display: none;
 	}
 }
 
