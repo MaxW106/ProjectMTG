@@ -417,32 +417,29 @@ img.logo {
 	padding: 10px;
 	margin-bottom: 20px;
 
-	animation-duration: 3s;
 	animation-name: error;
+	animation-duration: 3s;
 }
 
-.error-container {
+#error-container {
 	position: absolute;
 	top: 0;
 	right: 0;
 	z-index: 1;
+
+	display: flex;
+	flex-direction: column;
 }
 
 @keyframes error {
 	0% {
-		display: block;
 		opacity: 100;
 	}
-	75% {
+	80% {
 		opacity: 100;
-		display: block;
 	}
 	100% {
 		opacity: 0;
-		display: block;
-	}
-	100% {
-		display: none;
 	}
 }
 

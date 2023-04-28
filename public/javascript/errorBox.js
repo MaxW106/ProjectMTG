@@ -1,4 +1,5 @@
-let errorbox = document.getElementById("error-box");
+//let errorbox = document.getElementById("error-box");
+let errorContainer = document.getElementById("error-container");
 /*
 class ErrorBox {
 	constructor(className) {
@@ -38,25 +39,27 @@ class ErrorBox {
   }*/
 
 // Definieer een functie die een error box maakt
-function addErrorBox(message) {
+function getNewErrorBox() {
 	const errorBox = document.createElement("div");
-	/* errorBox.classList.add("error-box"); */
-	errorBox.textContent = message;
-	console.log(errorBox);
-	document.body.appendChild(errorBox);
+	errorBox.id = "error-box";
+	const errorText = document.createElement("p");
+	errorText.innerText =
+		"Er is een fout opgetreden. Controleer uw invoer en probeer het opnieuw.";
+	errorText.className = "paragraph-Landing";
+	errorBox.appendChild(errorText);
+	return errorBox;
 }
-
-console.log("test test");
 
 // Roep de functie aan wanneer er op een knop wordt gedrukt
 const a = document.querySelectorAll("a");
 a.forEach((element) => {
 	if (element.className == "a") {
 		element.addEventListener("click", () => {
-			// Simuleer een error
-			errorbox.style.animationName = "error";
-			// Laat de error box zien
-			addErrorBox("errorMessage");
+			const errorBox = getNewErrorBox();
+			errorContainer.appendChild(errorBox);
+			setTimeout(() => {
+				errorBox.style.display = "none";
+			}, 3000);
 		});
 	}
 });
