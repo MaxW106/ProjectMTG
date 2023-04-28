@@ -54,9 +54,12 @@ a.forEach((element) => {
 	if (element.className == "a") {
 		element.addEventListener("click", () => {
 			// Simuleer een error
-			errorbox.style.visibility = "visible";
+			errorbox.style.animationName = "error";
 			// Laat de error box zien
-			showErrorBox(errorMessage);
+			//showErrorBox(errorMessage);
+			setTimeout(() => {
+				errorbox.style.animationName = "";
+			}, 4005);
 		});
 	}
 });
