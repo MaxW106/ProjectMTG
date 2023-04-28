@@ -369,16 +369,16 @@ img.logo {
 
 #heading-Landing {
 	font-size: 28px;
-	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;	
+	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 	color: #1c0200;
-  }
+}
 
-  #a-Landing {
+#a-Landing {
 	font-size: 28px;
-	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;	
+	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 	color: #1c0200;
 	text-decoration: none;
-  }
+}
 
 .box {
 	margin-bottom: 30px;
@@ -407,20 +407,19 @@ img.logo {
 	font-weight: bold;
 }
 
-#error-box{
+#error-box {
 	visibility: hidden;
-		background-color: #f8d7da;
-		border: 1px solid #f5c6cb;
-		color: #721c24;
-		padding: 10px;
-		margin-bottom: 20px;
-		position: absolute;
-	  
+	background-color: #f8d7da;
+	border: 1px solid #f5c6cb;
+	color: #721c24;
+	padding: 10px;
+	margin-bottom: 20px;
+	position: absolute;
 }
 
-#paragraph-Landing{
-
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+#paragraph-Landing {
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+		sans-serif;
 }
 
 /*ending landing page*/
