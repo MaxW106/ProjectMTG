@@ -128,85 +128,116 @@ form button {
 	margin: 25px;
 }
 
-/*Voor de opmaak van de login */
-.login {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 100vh;
-}
-
-label {
-	font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-		"Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
-
-.card {
-	background-color: #fff;
-	border-radius: 10px;
-	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
-	width: 350px;
-	padding: 40px;
-	text-align: center;
-}
-
-.card h1 {
-	font-weight: bold;
-	margin-bottom: 20px;
-	font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-		"Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
-
-.form-input {
-	margin-bottom: 20px;
-	text-align: left;
-}
-
-.form-input label {
-	display: block;
-	margin-bottom: 5px;
-	font-size: 14px;
-	font-weight: bold;
-}
-
-.form-input input {
-	width: 100%;
-	padding: 10px;
-	border-radius: 5px;
-	border: 1px solid #ccc;
-	font-size: 14px;
-}
-
-.btn {
-	background-color: #3980f2;
-	color: #fff;
-	border: none;
-	padding: 10px 20px;
-	border-radius: 5px;
-	font-size: 14px;
-	text-transform: uppercase;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-	background-color: #270327;
-}
+/*Login page*/
 
 #login-image {
 	display: flex;
 	justify-content: center;
-	margin-top: 50px;
-}
-
-img.logo {
+	margin-bottom: 2rem;
+  }
+  
+  #login-image img {
+	height:250px;
+	width: 250px;
+  }
+  
+  .login {
+	display: flex;
+	flex-direction: right;
 	align-items: center;
-	width: 10%;
-}
+	justify-content: center;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0px 0px 15px #025686(0, 0, 0, 0.2);
+	padding: 2rem;
+	width: 400px;
+	margin: 0 auto;
+	max-width: 500px;
+	background-color: #1996DF;
+	padding: 20px;
+	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+	color: #1c0200;
+	margin-bottom: 135px;
+  }
+  
+  .login h1 {
+	margin-bottom: 1rem;
+  }
+  
+  .login form {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+  }
+  
+  .login .form-input {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1rem;
+  }
+  
+  .login .form-input label {
+	margin-bottom: 0.5rem;
+  }
+  
+  .login .form-input input[type="text"],
+  .login .form-input input[type="password"] {
+	padding: 0.5rem;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+  }
+  
+  .login .form-input input[type="checkbox"] {
+	margin-right: 0.5rem;
+  }
+  
+  .login .form-input label[for="remember"] {
+	display: inline;
+  }
+  
+  .login .form-input input[type="submit"] {
+	background-color: #007bff;
+	border: none;
+	color: #fff;
+	padding: 0.5rem 1rem;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-top: 1rem;
+  }
+  
+  #login-button {
+	background-color: #025686;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 25px;
+	box-shadow: 0px 5px 5px #055ff0(0, 0, 0, 0.3);
+	transition: all 0.3s ease;
+  }
+  
+  #login-button:hover {
+	background-color: #025686;
+	box-shadow: 0px 8px 8px #055ff0(0, 0, 0, 0.3);
+  }
+  
+  .form-input label[for="remember"] {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+  }  
 
-.hidden {
-	display: none;
-}
+  #login-header {
+	text-align: center;
+	font-size: 2em;
+  }
+  
+/*Einde login*/
 
 /*drawtest css*/
 
