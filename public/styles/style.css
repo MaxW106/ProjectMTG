@@ -9,7 +9,7 @@
 body {
 	background-color: var(--bg-color-grey);
 
-	max-height: 100vh;
+	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 }
@@ -92,8 +92,6 @@ footer {
 	color: var(--bg-color-white);
 	padding: 20px;
 	font-size: larger;
-	margin-left: -1rem;
-	margin-left: -1.5rem;
 }
 
 form {
