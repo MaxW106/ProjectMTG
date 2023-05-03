@@ -4,31 +4,33 @@
 	<body>
 		<header><%- include("partials/header", { pages: pages }) %></header>
 		<main>
-			<div class="topinfo">
-				<div class="left">
-					<img
-						src="<%= deck.imageurl %>"
-						alt="<%= deck.name %>"
-						width="200px"<%- include("partials/head", {title: "landing page"}) %>
-					/>
+			<div class="deckview-grid">
+				<div class="topinfo">
+					<div class="left">
+						<img
+							src="<%= deck.imageurl %>"
+							alt="<%= deck.name %>"
+							width="200px"<%- include("partials/head", {title: "landing page"}) %>
+						/>
+					</div>
+					<div class="middle">
+						<h1 class="deckName"><%= deck.name %></h1>
+						<h2 class="averageManaCost">Average manacost</h2>
+						<h2 class="totalCards">Total cards</h2>
+						<h2 class="totalLands">Total land cards</h2>
+					</div>
+					<div class="right">
+						<button id="export">Export</button>
+					</div>
 				</div>
-				<div class="middle">
-					<h1 class="deckName"><%= deck.name %></h1>
-					<h2 class="averageManaCost">Average manacost</h2>
-					<h2 class="totalCards">Total cards</h2>
-					<h2 class="totalLands">Total land cards</h2>
+				<div class="cards">
+					<% for (let i = 0; i < deck.cards.length; i++) {%>
+					<div class="card">
+						<img src="images/card-front.jpeg" alt="card front" />
+						<h3>X 3</h3>
+					</div>
+					<% } %>
 				</div>
-				<div class="right">
-					<button id="export">Export</button>
-				</div>
-			</div>
-			<div class="cards">
-				<% for (let i = 0; i < deck.cards.length; i++) {%>
-				<div class="card">
-					<img src="images/card-front.jpeg" alt="card front" />
-					<h3>X 3</h3>
-				</div>
-				<% } %>
 			</div>
 		</main>
 		<%- include("partials/footer") %>

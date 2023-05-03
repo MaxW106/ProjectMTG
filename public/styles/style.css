@@ -243,11 +243,14 @@ form button {
 
 
 /*drawtest css*/
-.drawtest-grid {
-	display: grid;
-	gap: 1.5rem;
-	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(2, 1fr);
+
+@media (min-width: 50em){
+	.drawtest-grid {
+		display: grid;
+		gap: 1.5rem;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+	}
 }
 
 .deck-choser-grid {
@@ -480,3 +483,16 @@ form button {
 }
 
 /*ending landing page*/
+
+/*deck_view css*/
+
+/*.deckview-grid {
+	display: grid;
+	gap: 1.5rem;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+}*/
+
+.left{
+	width: 120px;
+}	height: 100px;
