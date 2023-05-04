@@ -1,50 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Decks</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body id="decks-page-container">
-        <header id="header">
-            <!-- Header content here -->
-        </header>
+    <%- include("partials/head", { title: "Decks"}) %>
+    <body>
+        <%- include("partials/header") -%>
         <main>
-            <section id="deck-list">
-                <article id="deck-1" class="wrapper">
-                    <a href="deck?number=1">
-                        <img src="images/card-back.png">
-                        <figcaption>Deck 1</figcaption>
-                    </a>
-                </article>
-                <article id="deck-2" class="wrapper">
-                    <a href="deck?number=2">
-                        <img src="images/card-back.png">
-                        <figcaption>Deck 2</figcaption>
-                    </a>
-                </article>
-                <article id="deck-3" class="wrapper">
-                    <a href="deck?number=3">
-                        <img src="images/card-back.png">
-                        <figcaption>Deck 3</figcaption>
-                    </a>
-                </article>
-                <article id="deck-4" class="wrapper">
-                    <a href="deck?number=4">
-                        <img src="images/card-back.png">
-                        <figcaption>Deck 4</figcaption>
-                    </a>
-                </article>
-                <article id="deck-5" class="wrapper">
-                    <a href="deck?number=5">
-                        <img src="images/card-back.png">
-                        <figcaption>Deck 5</figcaption>
-                    </a>
-                </article>
-            </section>
+            <section class="container">
+                <% for(let i = 0; i < 5; i++) { %>
+                    <article class="wrapper">
+                        <a href="deck?number=<%= i %>">
+                            <img src="images/card-back.png">
+                            <figcaption>Deck <%= i + 1 %></figcaption>
+                        </a>
+                    </article>
+                <% } %>
         </main>
-        <footer id="footer">
-            <!-- Footer content here -->
-        </footer>
+        <%- include("partials/footer") %>
     </body>
 </html>
-
