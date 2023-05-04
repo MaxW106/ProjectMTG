@@ -14,10 +14,6 @@ body {
 	flex-direction: column;
 }
 
-footer {
-	margin-top: auto;
-}
-
 .boven .wrapper,
 .onder .wrapper {
 	display: inline-block;
@@ -84,16 +80,15 @@ footer {
 }
 
 footer {
-	display: flex;
-	justify-content: center;
+	display: block;
+	text-align: center;
 	background-color: var(--bg-color-purple);
-	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-		sans-serif;
 	color: var(--bg-color-white);
-	padding: 20px;
+	padding: 10px 0 10px 0;
+}
+footer h1 {
 	font-size: larger;
 }
-
 form {
 	display: flex;
 	justify-content: center;
@@ -134,14 +129,14 @@ form button {
 	display: flex;
 	justify-content: center;
 	margin-bottom: 2rem;
-  }
-  
-  #login-image img {
-	height:250px;
+}
+
+#login-image img {
+	height: 250px;
 	width: 250px;
-  }
-  
-  .login {
+}
+
+.login {
 	display: flex;
 	flex-direction: right;
 	align-items: center;
@@ -153,49 +148,49 @@ form button {
 	width: 400px;
 	margin: 0 auto;
 	max-width: 500px;
-	background-color: #1996DF;
+	background-color: #1996df;
 	padding: 20px;
 	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 	color: #1c0200;
 	margin-bottom: 135px;
-  }
-  
-  .login h1 {
+}
+
+.login h1 {
 	margin-bottom: 1rem;
-  }
-  
-  .login form {
+}
+
+.login form {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-  }
-  
-  .login .form-input {
+}
+
+.login .form-input {
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 1rem;
-  }
-  
-  .login .form-input label {
+}
+
+.login .form-input label {
 	margin-bottom: 0.5rem;
-  }
-  
-  .login .form-input input[type="text"],
-  .login .form-input input[type="password"] {
+}
+
+.login .form-input input[type="text"],
+.login .form-input input[type="password"] {
 	padding: 0.5rem;
 	border: 1px solid #ccc;
 	border-radius: 5px;
-  }
-  
-  .login .form-input input[type="checkbox"] {
+}
+
+.login .form-input input[type="checkbox"] {
 	margin-right: 0.5rem;
-  }
-  
-  .login .form-input label[for="remember"] {
+}
+
+.login .form-input label[for="remember"] {
 	display: inline;
-  }
-  
-  .login .form-input input[type="submit"] {
+}
+
+.login .form-input input[type="submit"] {
 	background-color: #007bff;
 	border: none;
 	color: #fff;
@@ -203,9 +198,9 @@ form button {
 	border-radius: 5px;
 	cursor: pointer;
 	margin-top: 1rem;
-  }
-  
-  #login-button {
+}
+
+#login-button {
 	background-color: #025686;
 	border: none;
 	color: white;
@@ -219,33 +214,35 @@ form button {
 	border-radius: 25px;
 	box-shadow: 0px 5px 5px #055ff0(0, 0, 0, 0.3);
 	transition: all 0.3s ease;
-  }
-  
-  #login-button:hover {
+}
+
+#login-button:hover {
 	background-color: #025686;
 	box-shadow: 0px 8px 8px #055ff0(0, 0, 0, 0.3);
-  }
-  
-  .form-input label[for="remember"] {
+}
+
+.form-input label[for="remember"] {
 	display: block;
 	margin: 0 auto;
 	text-align: center;
-  }  
+}
 
-  #login-header {
+#login-header {
 	text-align: center;
 	font-size: 2em;
-  }
-  
+}
+
 /*Einde login*/
 
 /*drawtest css*/
 
-.drawtest-grid {
-	display: grid;
-	gap: 1.5rem;
-	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(2, 1fr);
+@media (min-width: 50em) {
+	.drawtest-grid {
+		display: grid;
+		gap: 1.5rem;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+	}
 }
 
 .deck-choser-grid {
@@ -478,3 +475,17 @@ form button {
 }
 
 /*ending landing page*/
+
+/*deck_view css*/
+
+/*.deckview-grid {
+	display: grid;
+	gap: 1.5rem;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+}*/
+
+.left {
+	width: 120px;
+	height: 100px;
+}
