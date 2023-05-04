@@ -15,9 +15,26 @@ if(formregister.attachEvent){
 }
 /* checken wachtwoord */
 
+// Definieer een functie die een error box maakt
+let errorContainer = document.getElementById("error-password");
+function ErrorBox() {
+	const errorBox = document.createElement("div");
+	errorBox.id = "error-box";
+	const errorText = document.createElement("p");
+	errorText.innerText =
+		"Er is een fout opgetreden. Controleer uw invoer en probeer het opnieuw.";
+	errorText.className = "paragraph-Landing";
+	errorBox.appendChild(errorText);
+	return errorBox;
+}
+
 registerButton.addEventListener("click", function (){
     if(passwordChecker != password){
-        print("Your password is not the same!")
+        const errorBox = getNewErrorBox();
+			errorContainer.appendChild(errorBox);
+			setTimeout(() => {
+				errorBox.style.display = "none";
+			}, 5000);
     };
 });
 
