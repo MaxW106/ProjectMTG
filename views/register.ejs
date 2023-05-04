@@ -7,7 +7,7 @@
     <div class="login">
         <div class="card">
             <h1 class="login-header">Register</h1>
-            <form action="/register" method="POST">
+            <form action="/register" id="form-register" method="GET">
                 <div class="form-input">
                     <label for="username">Username:</label>
                     <input type="text" id="username" name="username" required>
@@ -24,7 +24,8 @@
                     <label for="password-verification">Password Verification:</label>
                     <input type="password" id="password-verification" name="password-verification" required>
                 </div>
-        <button type="submit" id="register-button">Register</button>
+                <div id="error-password"></div>
+        <button type="submit" id="register-button">Registreer</button>
         </form>
     </div>
     </div>

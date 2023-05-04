@@ -54,6 +54,7 @@ app.get("/register", (req, res) => {
 	res.render("register", {securePassword:securePassword, pages: pages_logged_in });
 });
 
+
 app.get("/deck", (req, res) => {
 	let number = req.query.number as string;
 	if (!number) number = "0";

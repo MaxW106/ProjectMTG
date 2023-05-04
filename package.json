@@ -24,12 +24,18 @@
     "@types/ejs": "^3.1.2",
     "@types/express": "^4.17.17",
     "@types/mongodb": "^4.0.7",
-    "@types/node": "^18.15.13"
+    "@types/node": "^18.16.3"
   },
   "dependencies": {
     "ejs": "^3.1.9",
     "express": "^4.18.2",
+<<<<<<< HEAD
     "mongodb": "^5.3.0",
     "mtgsdk-ts": "^1.1.2"
+=======
+    "mongo": "^0.1.0",
+    "mongodb": "^5.3.0",
+    "nodemon": "^2.0.22"
+>>>>>>> 50c18d2456ae7edd7628eff3a3c1dc35bad28839
   }
 }
