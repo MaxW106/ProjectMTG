@@ -264,6 +264,7 @@ form button {
 	border-width: 3px;
 	border-color: black;
 	border-radius: 5px;
+	
 }
 
 .drawpercentage-grid {
@@ -282,6 +283,7 @@ form button {
 	border-width: 3px;
 	border-color: black;
 	border-radius: 5px;
+	
 }
 
 .track-grid {
@@ -302,6 +304,7 @@ form button {
 	border-width: 3px;
 	border-color: black;
 	border-radius: 5px;
+	
 }
 
 .drawpercentage-display-grid {
@@ -327,6 +330,7 @@ form button {
 
 	height: 310px;
 	width: 210px;
+	
 }
 
 .btn-draw-grid {
@@ -347,6 +351,7 @@ form button {
 	border-width: 3px;
 	border-color: black;
 	border-radius: 5px;
+	
 }
 
 .btn-reset-grid {
@@ -367,6 +372,7 @@ form button {
 	border-width: 3px;
 	border-color: black;
 	border-radius: 5px;
+	
 }
 
 .discardpile-grid {
@@ -379,6 +385,7 @@ form button {
 
 	height: 310px;
 	width: 210px;
+	
 }
 /*einde drawtest css*/
 
