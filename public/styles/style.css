@@ -236,14 +236,11 @@ form button {
 /*Einde login*/
 
 /*drawtest css*/
-
-@media (min-width: 50em) {
-	.drawtest-grid {
-		display: grid;
-		gap: 1.5rem;
-		grid-template-columns: repeat(3, 1fr);
-		grid-template-rows: repeat(2, 1fr);
-	}
+.drawtest-grid {
+	display: grid;
+	gap: 1.5rem;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, 1fr);
 }
 
 .deck-choser-grid {
