@@ -483,6 +483,22 @@ form button {
 
 /*ending landing page*/
 
+#decks-page-container .container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px;
+	justify-items: center;
+  }
+  
+  #decks-page-container .wrapper:nth-child(-n+2) {
+	grid-row: 1;
+  }
+  
+  #decks-page-container figcaption {
+	text-align: center;
+  }
+  
+
 /*deck_view css*/
 
 /*.deckview-grid {
