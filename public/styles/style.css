@@ -14,10 +14,6 @@ body {
 	flex-direction: column;
 }
 
-footer {
-	margin-top: auto;
-}
-
 .boven .wrapper,
 .onder .wrapper {
 	display: inline-block;
@@ -84,18 +80,15 @@ footer {
 }
 
 footer {
-	display: flex;
-	justify-content: center;
+	display: block;
+	text-align: center;
 	background-color: var(--bg-color-purple);
-	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-		sans-serif;
 	color: var(--bg-color-white);
-	padding: 20px;
-	font-size: larger;
-	margin-left: -1rem;
-	margin-left: -1.5rem;
+	padding: 10px 0 10px 0;
 }
-
+footer h1{
+	font-size: larger;
+  }
 form {
 	display: flex;
 	justify-content: center;
@@ -495,4 +488,5 @@ form button {
 
 .left{
 	width: 120px;
-}	height: 100px;
+	height: 100px;
+}
