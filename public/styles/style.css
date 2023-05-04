@@ -6,15 +6,11 @@
 	--bg-color-black: #000000;
 }
 
-body,html {
+body,
+html {
 	background-color: var(--bg-color-grey);
-<<<<<<< HEAD
-	width: 100%;
-	height: 100vh;
-=======
 
 	min-height: 100vh;
->>>>>>> d339f5b86ed91189f0b8ce23900aa9449374acb8
 	display: flex;
 	flex-direction: column;
 }
