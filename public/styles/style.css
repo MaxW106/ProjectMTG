@@ -489,3 +489,8 @@ form button {
 	width: 120px;
 	height: 100px;
 }
+/* register */
+#register{
+	color: var(--bg-color-white);
+	font-size: larger;
+}
