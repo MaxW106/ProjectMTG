@@ -6,8 +6,9 @@
   <header><%- include("partials/header") %></header>
   <div id="login">
     <figure id="login-image">
-      <img src="images/wizard.png" alt="Logo">
-    </figure>
+      <a href="home" id="logo">
+        <img src="images/wizard.png" alt="Logo">
+      </a>    </figure>
     <div class="login">
       <div class="card">
         <h1 class="login-header">LOGIN</h1>
@@ -25,6 +26,7 @@
             <label for="remember">Remember me</label>
           </div>
           <input type="submit" id="login-button" value="Login">
+          <input type="button" id="signup-button" value="Registreer">
         </form>
       </div>
     </div>
