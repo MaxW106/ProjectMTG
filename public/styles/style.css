@@ -85,6 +85,7 @@ footer {
 	background-color: var(--bg-color-purple);
 	color: var(--bg-color-white);
 	padding: 20px 0 20px 0;
+	margin-top: auto;
 }
 footer h1{
 	font-size: larger;
@@ -508,4 +509,9 @@ form button {
 .left{
 	width: 120px;
 	height: 100px;
+}
+/* register */
+#register{
+	color: var(--bg-color-white);
+	font-size: larger;
 }
