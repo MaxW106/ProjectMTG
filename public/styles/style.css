@@ -252,6 +252,13 @@ form button {
   }
   
 /*Einde login*/
+/* Register*/
+.register .form-input input[type="email"] {
+	border: 1px solid black; 
+	padding: 5px; 
+	font-size: 1px;
+} 
+/*End register*/
 
 
 /*drawtest css*/
