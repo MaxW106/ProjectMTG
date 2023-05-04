@@ -51,8 +51,9 @@ app.get("/drawtest", (req, res) => {
 app.get("/login", (req, res) => {
 	res.render("login", { pages: pages_logged_in });
 });
+let securePassword:number;
 app.get("/register", (req, res) => {
-	res.render("register", { pages: pages_logged_in });
+	res.render("register", {securePassword:securePassword, pages: pages_logged_in });
 });
 
 app.get("/deck", (req, res) => {

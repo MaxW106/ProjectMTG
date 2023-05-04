@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include("partials/head", { title: "Register"}) %>
-    
+    <head><script src="/javascript/passwordChecker.js"></script></head>
   <body>
     <header><%- include("partials/header") %></header>
     <div class="login">
@@ -24,7 +24,7 @@
                     <label for="password-verification">Password Verification:</label>
                     <input type="password" id="password-verification" name="password-verification" required>
                 </div>
-        <button type="submit" id="login-button">Register</button>
+        <button type="submit" id="register-button">Register</button>
         </form>
     </div>
     </div>
