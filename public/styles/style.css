@@ -253,11 +253,21 @@ form button {
   
 /*Einde login*/
 /* Register*/
-.register .form-input input[type="email"] {
-	border: 1px solid black; 
-	padding: 5px; 
-	font-size: 1px;
-} 
+#register-button {
+	background-color: #025686;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 25px;
+	box-shadow: 0px 5px 5px #025686(0, 0, 0, 0.3);
+	transition: all 0.3s ease;
+  }
 /*End register*/
 
 
