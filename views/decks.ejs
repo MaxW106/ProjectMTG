@@ -7,8 +7,10 @@
             <section class="container">
                 <% for(let i = 0; i < 5; i++) { %>
                     <article class="wrapper">
-                        <a href="deck?number=<%= i %>"><img src="images/card-back.png">
-                    <figcaption>Deck <%= i + 1%></figcaption></a>
+                        <a href="deck?number=<%= i %>">
+                            <img src="images/card-back.png">
+                            <figcaption>Deck <%= i + 1 %></figcaption>
+                        </a>
                     </article>
                 <% } %>
         </main>
