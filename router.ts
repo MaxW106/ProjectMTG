@@ -1,11 +1,9 @@
 import express from "express";
-import { MongoClient, ObjectId } from "mongodb";
-const path = require("path");
+import path from "path";
+import mtg from "mtgsdk-ts";
 const app = express();
 
 import db from "./db.json";
-const secret = require("./secret.json");
-const uri = secret.mongoUri;
 
 let pages_logged_in = ["home", "decks", "drawtest", "login"];
 let pages_not_logged_in = ["home", "login"];
