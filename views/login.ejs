@@ -3,15 +3,15 @@
     <%- include("partials/head", { title: "Login"}) %>
     
 <body>
-    <header><%- include("partials/header") -%></header>
+  <header><%- include("partials/header") %></header>
   <div id="login">
     <figure id="login-image">
       <img src="images/wizard.png" alt="Logo">
     </figure>
     <div class="login">
       <div class="card">
-        <h1 id="login-header">LOGIN</h1>
-        <form id="login-form" action="" method="post">
+        <h1 class="login-header">LOGIN</h1>
+        <form class="login-form" action="" method="post">
           <div class="form-input">
             <label for="username">Username</label>
             <input type="text" id="username" name="username" required>

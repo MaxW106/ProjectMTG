@@ -228,7 +228,7 @@ form button {
 	text-align: center;
 }
 
-#login-header {
+.login-header {
 	text-align: center;
 	font-size: 2em;
 }
