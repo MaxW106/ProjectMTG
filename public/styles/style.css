@@ -314,7 +314,7 @@ form button {
 	color: white;
 }
 
-.drawpile-grid {
+#drawpile-grid {
 	grid-column: 2;
 	grid-row: 2;
 	margin-right: auto;
@@ -327,12 +327,11 @@ form button {
 	width: 210px;
 }
 
-.btn-draw-grid {
+#btn-draw-grid {
 	grid-column: 2;
 	grid-row: 2;
 	margin-bottom: auto;
 	margin-top: 5rem;
-
 	align-self: center;
 	justify-self: center;
 
@@ -347,7 +346,7 @@ form button {
 	border-radius: 5px;
 }
 
-.btn-reset-grid {
+#btn-reset-grid {
 	grid-column: 2;
 	grid-row: 2;
 	margin-top: auto;
@@ -367,7 +366,7 @@ form button {
 	border-radius: 5px;
 }
 
-.discardpile-grid {
+#discardpile-grid {
 	grid-column: 2;
 	grid-row: 2;
 	margin-left: auto;
