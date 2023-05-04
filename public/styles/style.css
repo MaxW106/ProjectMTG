@@ -6,10 +6,10 @@
 	--bg-color-black: #000000;
 }
 
-body {
+body,html {
 	background-color: var(--bg-color-grey);
-
-	max-height: 100vh;
+	width: 100%;
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
 }
@@ -39,7 +39,6 @@ body {
 	justify-content: center;
 	align-items: center;
 	padding: 20px;
-	margin: -8px;
 	margin-bottom: 1.1rem;
 	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
 		sans-serif;
