@@ -1,8 +1,8 @@
 import express from "express";
-import path from "path";
 import mtg from "mtgsdk-ts";
 import { MongoClient, ObjectId } from "mongodb";
-import { main } from "./mongo/db";
+import { main, User } from "./mongo/db";
+const path = require("path");
 const app = express();
 
 import db from "./db.json";
@@ -57,6 +57,13 @@ app.get("/register", (req, res) => {
 		pages: pages_logged_in,
 	});
 });
+app.post("/register", (req, res) => {
+	let user: User = {
+		name: req.body.name,
+		mail: req.body.mail,
+		password: req.body.password,
+	};
+});
 
 app.get("/deck", (req, res) => {
 	let number = req.query.number as string;
@@ -69,7 +76,7 @@ app.get("/*", (req, res) => {
 	res.status(404);
 	res.render("404", { pages: pages_logged_in });
 });
-
+main();
 app.listen(app.get("port"), () => {
 	console.log(
 		`Web application running at http://localhost:${app.get("port")}`
