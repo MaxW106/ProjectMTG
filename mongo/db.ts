@@ -70,7 +70,7 @@ const createUser = async (
 	)
     throw "email already has an account";
 
-	await client.db("ProjectMTG").collection("Users").insertOne({name,email, hashedPassword});
+	await client.db("ProjectMTG").collection("Users").insertOne(user);
 };
 
 export { main, connect, createUser, User };
