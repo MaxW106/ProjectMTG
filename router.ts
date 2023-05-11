@@ -61,10 +61,10 @@ app.get("/register", (req, res) => {
 	});
 });
 
-app.post("/register", (req, res) => {
+app.post("/register", async (req, res) => {
 	try {
-		createUser(
-			req.body.username as string,
+		await createUser(
+			req.body.name as string,
 			req.body.email as string,
 			req.body.password as string
 		);
@@ -77,6 +77,7 @@ app.post("/register", (req, res) => {
 		});
 	}
 });
+
 
 app.get("/deck", (req, res) => {
 	let number = req.query.number as string;

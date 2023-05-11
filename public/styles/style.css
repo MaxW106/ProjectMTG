@@ -9,9 +9,10 @@
 body {
 	background-color: var(--bg-color-grey);
 
-	max-height: 100vh;
+	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
+	
 }
 
 .boven .wrapper,
@@ -165,7 +166,10 @@ form button {
 	padding: 20px;
 	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 	color: #1c0200;
+<<<<<<< HEAD
 	margin-right: 12rem;
+=======
+>>>>>>> f2733bcf099134f17bb334aacafd83ac54123812
   }
   
   .login h1 {
