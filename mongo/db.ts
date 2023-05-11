@@ -28,4 +28,9 @@ const main = async () => {
     }
     
 }
+
+const createUser = (naam: string, email: string, hashedPassword: string) => {
+    
+}
+
 export{main}
