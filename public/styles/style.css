@@ -273,13 +273,11 @@ form button {
 
 /*drawtest css*/
 
-@media (min-width: 50em){
-	.drawtest-grid {
-		display: grid;
-		gap: 1.5rem;
-		grid-template-columns: repeat(3, 1fr);
-		grid-template-rows: repeat(2, 1fr);
-	}
+.drawtest-grid {
+	display: grid;
+	gap: 1.5rem;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, 1fr);
 }
 
 .deck-choser-grid {
@@ -534,7 +532,9 @@ form button {
 	width: 120px;
 	height: 100px;
 }
+
 /* register */
+
 #register{
 	color: var(--bg-color-white);
 	font-size: larger;

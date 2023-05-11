@@ -1,6 +1,8 @@
 import express from "express";
 import path from "path";
 import mtg from "mtgsdk-ts";
+import { MongoClient, ObjectId } from "mongodb";
+import { main } from "./mongo/db";
 const app = express();
 
 import db from "./db.json";
@@ -37,7 +39,6 @@ app.get("/home", (req, res) => {
 		searchString: searchString,
 	});
 });
-
 app.get("/decks", (req, res) => {
 	res.render("decks", { pages: pages_logged_in });
 });
@@ -49,11 +50,13 @@ app.get("/drawtest", (req, res) => {
 app.get("/login", (req, res) => {
 	res.render("login", { pages: pages_logged_in });
 });
-let securePassword:number;
+let securePassword: number;
 app.get("/register", (req, res) => {
-	res.render("register", {securePassword:securePassword, pages: pages_logged_in });
+	res.render("register", {
+		securePassword: securePassword,
+		pages: pages_logged_in,
+	});
 });
-
 
 app.get("/deck", (req, res) => {
 	let number = req.query.number as string;

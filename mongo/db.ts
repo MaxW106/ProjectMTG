@@ -16,7 +16,8 @@ let users: User[] = [
 const main = async () => {
     try{
         await client.connect();
-        
+        let userCollection = await client.db("ProjectMTG").collection("Users");
+        let deckCollection = await client.db("ProjectMTG").collection("Decks");
         
     }    
     catch(e){
@@ -25,24 +26,6 @@ const main = async () => {
     finally{
         await client.close();
     }
-    const exit = async () => {
-        try {
-            await client.close();
-            console.log('Disconnected from database');
-        } catch (error) {
-            console.error(error);
-        }
-        process.exit(0);
-    }
     
-    const connect = async () => {
-        try {
-            await client.connect();
-            console.log('Connected to database');
-            process.on('SIGINT', exit);
-        } catch (error) {
-            console.error(error);
-        }
-    }
 }
-main();
+export{main}
