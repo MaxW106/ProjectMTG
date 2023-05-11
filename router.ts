@@ -1,17 +1,19 @@
 import express from "express";
+import mtg from "mtgsdk-ts";
 import { MongoClient, ObjectId } from "mongodb";
+import { main, connect, createUser, User } from "./mongo/db";
 const path = require("path");
 const app = express();
 
 import db from "./db.json";
-const secret = require("./secret.json");
-const uri = secret.mongoUri;
 
 let pages_logged_in = ["home", "decks", "drawtest", "login"];
 let pages_not_logged_in = ["home", "login"];
 
 app.set("port", 3000);
 app.set("view engine", "ejs");
+
+connect();
 
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -39,7 +41,6 @@ app.get("/home", (req, res) => {
 		searchString: searchString,
 	});
 });
-
 app.get("/decks", (req, res) => {
 	res.render("decks", { pages: pages_logged_in });
 });
@@ -51,11 +52,31 @@ app.get("/drawtest", (req, res) => {
 app.get("/login", (req, res) => {
 	res.render("login", { pages: pages_logged_in });
 });
-let securePassword:number;
+
+let securePassword: string;
 app.get("/register", (req, res) => {
-	res.render("register", {securePassword:securePassword, pages: pages_logged_in });
+	res.render("register", {
+		securePassword: securePassword,
+		pages: pages_logged_in,
+	});
 });
 
+app.post("/register", (req, res) => {
+	try {
+		createUser(
+			req.body.username as string,
+			req.body.email as string,
+			req.body.password as string
+		);
+		res.render("register", { emailTaken: false, pages: pages_logged_in });
+	} catch (e) {
+		console.log(e);
+		res.render("register", {
+			emailTaken: true,
+			pages: pages_not_logged_in,
+		});
+	}
+});
 
 app.get("/deck", (req, res) => {
 	let number = req.query.number as string;
