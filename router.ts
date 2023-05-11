@@ -1,7 +1,7 @@
 import express from "express";
 import mtg from "mtgsdk-ts";
 import { MongoClient, ObjectId } from "mongodb";
-import { main, User } from "./mongo/db";
+import { main, connect, createUser, User } from "./mongo/db";
 const path = require("path");
 const app = express();
 
@@ -12,6 +12,8 @@ let pages_not_logged_in = ["home", "login"];
 
 app.set("port", 3000);
 app.set("view engine", "ejs");
+
+connect();
 
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -50,19 +52,30 @@ app.get("/drawtest", (req, res) => {
 app.get("/login", (req, res) => {
 	res.render("login", { pages: pages_logged_in });
 });
-let securePassword: number;
+
+let securePassword: string;
 app.get("/register", (req, res) => {
 	res.render("register", {
 		securePassword: securePassword,
 		pages: pages_logged_in,
 	});
 });
+
 app.post("/register", (req, res) => {
-	let user: User = {
-		name: req.body.name,
-		mail: req.body.mail,
-		password: req.body.password,
-	};
+	try {
+		createUser(
+			req.body.username as string,
+			req.body.email as string,
+			req.body.password as string
+		);
+		res.render("register", { emailTaken: false, pages: pages_logged_in });
+	} catch (e) {
+		console.log(e);
+		res.render("register", {
+			emailTaken: true,
+			pages: pages_not_logged_in,
+		});
+	}
 });
 
 app.get("/deck", (req, res) => {
@@ -76,7 +89,7 @@ app.get("/*", (req, res) => {
 	res.status(404);
 	res.render("404", { pages: pages_logged_in });
 });
-main();
+
 app.listen(app.get("port"), () => {
 	console.log(
 		`Web application running at http://localhost:${app.get("port")}`
