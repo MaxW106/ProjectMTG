@@ -1,5 +1,6 @@
 import express from "express";
 import { MongoClient, ObjectId } from "mongodb";
+import { main } from "./mongo/db";
 const path = require("path");
 const app = express();
 
@@ -39,7 +40,6 @@ app.get("/home", (req, res) => {
 		searchString: searchString,
 	});
 });
-
 app.get("/decks", (req, res) => {
 	res.render("decks", { pages: pages_logged_in });
 });
