@@ -166,10 +166,7 @@ form button {
 	padding: 20px;
 	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 	color: #1c0200;
-<<<<<<< HEAD
 	margin-right: 12rem;
-=======
->>>>>>> f2733bcf099134f17bb334aacafd83ac54123812
   }
   
   .login h1 {
@@ -520,3 +517,40 @@ form button {
 	color: var(--bg-color-white);
 	font-size: larger;
 }
+@media only screen and (max-width: 767px) {
+	body {
+	  font-size: 14px;
+	}
+  
+	.container {
+	  padding: 10px;
+	}
+  
+	/* Voeg hier meer gsm-specifieke stijlen toe */
+  }
+  
+  /* Media query voor tablet (schermen tussen 768px en 1023px) */
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+	body {
+	  font-size: 16px;
+	}
+  
+	.container {
+	  padding: 20px;
+	}
+  
+	/* Voeg hier meer tablet-specifieke stijlen toe */
+  }
+  
+  /* Media query voor laptop (schermen groter dan 1024px) */
+  @media only screen and (min-width: 1024px) {
+	body {
+	  font-size: 18px;
+	}
+  
+	.container {
+	  padding: 30px;
+	}
+  
+	/* Voeg hier meer laptop-specifieke stijlen toe */
+  }

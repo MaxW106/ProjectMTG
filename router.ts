@@ -64,7 +64,7 @@ app.get("/register", (req, res) => {
 app.post("/register", async (req, res) => {
 	try {
 		await createUser(
-			req.body.name as string,
+			req.body.username as string,
 			req.body.email as string,
 			req.body.password as string
 		);

@@ -52,14 +52,10 @@ const createUser = async (
 	email: string,
 	hashedPassword: string
 ) => {
-	console.log("test");
-	console.log(name);
-	console.log(email);
-	console.log(hashedPassword);
 	let user: User = {
 		name: name,
 		email: email,
-		password: hashedPassword,
+		password: hashedPassword
 	};
 
 	if (
