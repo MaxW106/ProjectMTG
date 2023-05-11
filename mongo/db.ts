@@ -28,13 +28,9 @@ const main = async () => {
     }
     
 }
-<<<<<<< HEAD
 
 const createUser = (naam: string, email: string, hashedPassword: string) => {
     
 }
 
-export{main}
-=======
 export{main, User}
->>>>>>> 47392f9de02855af736857dd31caa5699aa1eb20
