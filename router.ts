@@ -1,6 +1,6 @@
 import express from "express";
 import { MongoClient, ObjectId } from "mongodb";
-import { main } from "./mongo/db";
+import { main, User } from "./mongo/db";
 const path = require("path");
 const app = express();
 
@@ -55,6 +55,13 @@ let securePassword:number;
 app.get("/register", (req, res) => {
 	res.render("register", {securePassword:securePassword, pages: pages_logged_in });
 });
+app.post("/register", (req,res) => {
+	let user:User = {
+		name: req.body.name,
+		mail: req.body.mail,
+		password: req.body.password
+	};
+})
 
 
 app.get("/deck", (req, res) => {
@@ -68,7 +75,7 @@ app.get("/*", (req, res) => {
 	res.status(404);
 	res.render("404", { pages: pages_logged_in });
 });
-
+main();
 app.listen(app.get("port"), () => {
 	console.log(
 		`Web application running at http://localhost:${app.get("port")}`
