@@ -1,7 +1,7 @@
 import express from "express";
 import mtg from "mtgsdk-ts";
 import { MongoClient, ObjectId } from "mongodb";
-import { main, connect, createUser, User } from "./mongo/db";
+import { connect, createUser, User } from "./mongo/db";
 const path = require("path");
 const app = express();
 
@@ -13,9 +13,9 @@ let pages_not_logged_in = ["home", "login"];
 app.set("port", 3000);
 app.set("view engine", "ejs");
 
-connect();
-
 app.use(express.static(path.join(__dirname, "public")));
+
+connect();
 
 app.get("/", (req, res) => {
 	res.render("landingpage");
@@ -41,6 +41,7 @@ app.get("/home", (req, res) => {
 		searchString: searchString,
 	});
 });
+
 app.get("/decks", (req, res) => {
 	res.render("decks", { pages: pages_logged_in });
 });
@@ -62,8 +63,8 @@ app.get("/register", (req, res) => {
 });
 
 app.post("/register", (req, res) => {
-	try {
-		createUser(
+	/*try {
+		await createUser(
 			req.body.username as string,
 			req.body.email as string,
 			req.body.password as string
@@ -75,7 +76,10 @@ app.post("/register", (req, res) => {
 			emailTaken: true,
 			pages: pages_not_logged_in,
 		});
-	}
+	}*/
+
+	console.log((req.body.email as string) ?? "");
+	res.render("register", { pages: pages_logged_in });
 });
 
 app.get("/deck", (req, res) => {
