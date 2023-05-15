@@ -9,10 +9,10 @@ interface User {
 	password: string;
 }
 let users: User[] = [
-	{ name: "Artjom", email: "artjom@gmail.com", password: "test" },
-	{ name: "Daniel", email: "Daniel@gmail.com", password: "test" },
-	{ name: "Max", email: "Max@gmail.com", password: "test" },
-	{ name: "Bilal", email: "Bilal@gmail.com", password: "test" },
+	{ name: "Artjom", email: "artjom@gmail.com", password: "test"},
+	{ name: "Daniel", email: "Daniel@gmail.com", password: "test"},
+	{ name: "Max", email: "Max@gmail.com", password: "test"},
+	{ name: "Bilal", email: "Bilal@gmail.com", password: "test"},
 ];
 const main = async () => {
 	try {
@@ -46,27 +46,38 @@ const connect = async () => {
 		console.error(error);
 	}
 };
-
 const createUser = async (
-	name: string,
-	email: string,
-	hashedPassword: string
+    name: string,
+    email: string,
+    hashedPassword: string
 ) => {
-	let user: User = {
-		name: name,
-		email: email,
-		password: hashedPassword
-	};
+    let user: User = {
+        name: name,
+        email: email,
+        password: hashedPassword
+    };
 
-	if (
-		await client
-			.db("ProjectMTG")
-			.collection("Users")
-			.findOne({ email: email })
-	)
+    if (
+        await client
+            .db("ProjectMTG")
+            .collection("Users")
+            .findOne({ email: email })
+    )
     throw "email already has an account";
 
-	await client.db("ProjectMTG").collection("Users").insertOne(user);
+    
 };
+const login = async (
+    name: string,
+    Password: string
+) => {
+    
 
+    /*if (
+        await client.db("ProjectMTG").collection("Users").findOne({name}) == name
+    )
+    throw "email already has an account";*/
+
+    
+};
 export { main, connect, createUser, User };

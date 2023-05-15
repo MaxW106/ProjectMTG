@@ -10,6 +10,8 @@ import db from "./db.json";
 let pages_logged_in = ["home", "decks", "drawtest", "login"];
 let pages_not_logged_in = ["home", "login"];
 
+app.use(express.json({ limit: '1mb' }));
+app.use(express.urlencoded({ extended:true}));
 app.set("port", 3000);
 app.set("view engine", "ejs");
 
@@ -52,23 +54,26 @@ app.get("/drawtest", (req, res) => {
 app.get("/login", (req, res) => {
 	res.render("login", { pages: pages_logged_in });
 });
+app.post("/login", async(req,res) =>{
+		req.body.username as string,
+		req.body.password as string
+		res.render("home", {pages: pages_logged_in});
+})
 
-let securePassword: string;
 app.get("/register", (req, res) => {
 	res.render("register", {
-		securePassword: securePassword,
 		pages: pages_logged_in,
 	});
 });
 
-app.post("/register", async (req, res) => {
+app.post("/register", async(req, res) => {
 	try {
 		await createUser(
 			req.body.username as string,
 			req.body.email as string,
 			req.body.password as string
 		);
-		res.render("register", { emailTaken: false, pages: pages_logged_in });
+		res.render("register", { emailTaken: false, pages: pages_logged_in});
 	} catch (e) {
 		console.log(e);
 		res.render("register", {
