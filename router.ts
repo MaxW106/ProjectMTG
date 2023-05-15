@@ -62,8 +62,13 @@ app.get("/register", (req, res) => {
 	});
 });
 
+<<<<<<< HEAD
 app.post("/register", (req, res) => {
 	/*try {
+=======
+app.post("/register", async (req, res) => {
+	try {
+>>>>>>> b0d445021890a7afb0dc0ef1e65798a6985da725
 		await createUser(
 			req.body.username as string,
 			req.body.email as string,
@@ -81,6 +86,7 @@ app.post("/register", (req, res) => {
 	console.log((req.body.email as string) ?? "");
 	res.render("register", { pages: pages_logged_in });
 });
+
 
 app.get("/deck", (req, res) => {
 	let number = req.query.number as string;

@@ -9,9 +9,10 @@
 body {
 	background-color: var(--bg-color-grey);
 
-	max-height: 100vh;
+	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
+	
 }
 
 .boven .wrapper,
@@ -125,34 +126,47 @@ form button {
 
 /*Login page*/
 
-#login-image {
+#login {
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	height: calc(100vh - 60px); 
 	margin-bottom: 2rem;
   }
   
+  #login-container {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+  }
+  
+  #login-image {
+	display: flex;
+	justify-content: center;
+	margin-right: calc(15%); 
+  }
+  
+  
   #login-image img {
-	height:250px;
+	height: 250px;
 	width: 250px;
   }
   
   .login {
 	display: flex;
-	flex-direction: right;
+	flex-direction: column;
 	align-items: center;
-	justify-content: center;
 	background-color: #fff;
 	border-radius: 5px;
-	box-shadow: 0px 0px 15px #025686(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
 	padding: 2rem;
 	width: 400px;
-	margin: 0 auto;
 	max-width: 500px;
 	background-color: #1996DF;
 	padding: 20px;
 	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 	color: #1c0200;
-	margin-bottom: 135px;
+	margin-right: 12rem;
   }
   
   .login h1 {
@@ -253,167 +267,141 @@ form button {
   
 /*Einde login*/
 /* Register*/
+.register-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+#register-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+#register-form h1 {
+    margin-bottom: 20px;
+}
+
+#register-form .form-input {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
 #register-button {
-	background-color: #025686;
-	border: none;
-	color: white;
-	padding: 15px 32px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	margin: 4px 2px;
-	cursor: pointer;
-	border-radius: 25px;
-	box-shadow: 0px 5px 5px #025686(0, 0, 0, 0.3);
-	transition: all 0.3s ease;
-  }
+    background-color: #025686;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 25px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+
 /*End register*/
 
 
 /*drawtest css*/
-
-.drawtest-grid {
-	display: grid;
-	gap: 1.5rem;
-	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(2, 1fr);
+.controls-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
 }
 
-.deck-choser-grid {
-	grid-column: 2;
-	grid-row: 1;
-
-	margin-right: auto;
-	margin-top: 7rem;
-
-	align-self: center;
-	justify-self: center;
-	text-align: center;
-
-	height: 60px;
-	width: 250px;
-
-	border-style: solid;
-	border-width: 3px;
-	border-color: black;
-	border-radius: 5px;
+.deck-choser {
+    order: 0;
+    align-self: flex-start;
+    width: 250px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+    border-radius: 5px;
 }
 
-.drawpercentage-grid {
-	grid-column: 2;
-	grid-row: 1;
-	margin-right: auto;
-	margin-top: auto;
-
-	align-self: center;
-	justify-self: center;
-
-	height: 43px;
-	width: 240px;
-
-	border-style: solid;
-	border-width: 3px;
-	border-color: black;
-	border-radius: 5px;
+.drawpercentage {
+    order: 1;
+    align-self: flex-start;
+    width: 240px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+    border-radius: 5px;
 }
 
-.track-grid {
-	grid-column: 2;
-	grid-row: 1;
-	margin-right: 0.5rem;
-	margin-top: auto;
-
-	align-self: center;
-	justify-self: center;
-
-	height: 50px;
-	width: 100px;
-	background-color: #a20da2;
-	color: white;
-
-	border-style: solid;
-	border-width: 3px;
-	border-color: black;
-	border-radius: 5px;
+.track {
+    order: 2;
+    height: 50px;
+    width: 100px;
+    background-color: #a20da2;
+    color: white;
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+    border-radius: 5px;
 }
 
-.drawpercentage-display-grid {
-	grid-column: 2;
-	grid-row: 1;
-	margin-top: auto;
-	margin-left: 10rem;
-	margin-bottom: 1rem;
-
-	align-self: center;
-	justify-self: center;
-	color: white;
+.drawpercentage-display {
+    order: 3;
+    align-self: center;
+    color: white;
+    margin-left: 0.5rem;
 }
 
-.drawpile-grid {
-	grid-column: 2;
-	grid-row: 2;
-	margin-right: auto;
-	margin-bottom: auto;
-
-	align-self: center;
-	justify-self: center;
-
-	height: 310px;
-	width: 210px;
+#btn-draw {
+    order: 4;
+    margin-top: 1rem;
+    height: 50px;
+    width: 100px;
+    background-color: #a20da2;
+    color: white;
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+    border-radius: 5px;
 }
 
-.btn-draw-grid {
-	grid-column: 2;
-	grid-row: 2;
-	margin-bottom: auto;
-	margin-top: 5rem;
-
-	align-self: center;
-	justify-self: center;
-
-	height: 60px;
-	width: 80px;
-	background-color: #a20da2;
-	color: white;
-
-	border-style: solid;
-	border-width: 3px;
-	border-color: black;
-	border-radius: 5px;
+#btn-reset {
+    order: 5;
+    margin-top: 1rem;
+    height: 50px;
+    width: 100px;
+    background-color: #a20da2;
+    color: white;
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+    border-radius: 5px;
 }
 
-.btn-reset-grid {
-	grid-column: 2;
-	grid-row: 2;
-	margin-top: auto;
-	margin-bottom: 5rem;
-
-	align-self: center;
-	justify-self: center;
-
-	height: 60px;
-	width: 80px;
-	background-color: #a20da2;
-	color: white;
-
-	border-style: solid;
-	border-width: 3px;
-	border-color: black;
-	border-radius: 5px;
+#drawpile {
+    order: 6;
+    margin-top: 1rem;
+    height: 310px;
+    width: 210px;
 }
 
-.discardpile-grid {
-	grid-column: 2;
-	grid-row: 2;
-	margin-left: auto;
-
-	align-self: center;
-	justify-self: center;
-
-	height: 310px;
-	width: 210px;
+#discardpile {
+    order: 7;
+    margin-top: 1rem;
+    height: 310px;
+    width: 210px;
 }
+
 /*einde drawtest css*/
 
 /*Landing page*/
@@ -491,15 +479,7 @@ form button {
 	display: flex;
 	flex-direction: column;
 }
-#error-password{
-		position: absolute;
-		top: 0;
-		right: 0;
-		z-index: 1;
-	
-		display: flex;
-		flex-direction: column;
-}
+
 @keyframes error {
 	0% {
 		opacity: 100;
@@ -532,10 +512,45 @@ form button {
 	width: 120px;
 	height: 100px;
 }
-
 /* register */
-
 #register{
 	color: var(--bg-color-white);
 	font-size: larger;
 }
+@media only screen and (max-width: 767px) {
+	body {
+	  font-size: 14px;
+	}
+  
+	.container {
+	  padding: 10px;
+	}
+  
+	/* Voeg hier meer gsm-specifieke stijlen toe */
+  }
+  
+  /* Media query voor tablet (schermen tussen 768px en 1023px) */
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+	body {
+	  font-size: 16px;
+	}
+  
+	.container {
+	  padding: 20px;
+	}
+  
+	/* Voeg hier meer tablet-specifieke stijlen toe */
+  }
+  
+  /* Media query voor laptop (schermen groter dan 1024px) */
+  @media only screen and (min-width: 1024px) {
+	body {
+	  font-size: 18px;
+	}
+  
+	.container {
+	  padding: 30px;
+	}
+  
+	/* Voeg hier meer laptop-specifieke stijlen toe */
+  }

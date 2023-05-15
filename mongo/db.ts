@@ -52,14 +52,10 @@ const createUser = async (
 	email: string,
 	hashedPassword: string
 ) => {
-	console.log("test");
-	console.log(name);
-	console.log(email);
-	console.log(hashedPassword);
 	let user: User = {
 		name: name,
 		email: email,
-		password: hashedPassword,
+		password: hashedPassword
 	};
 
 	if (
@@ -68,7 +64,7 @@ const createUser = async (
 			.collection("Users")
 			.findOne({ email: email })
 	)
-		throw "email already has an account";
+    throw "email already has an account";
 
 	await client.db("ProjectMTG").collection("Users").insertOne(user);
 };
