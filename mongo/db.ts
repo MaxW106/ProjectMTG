@@ -67,17 +67,5 @@ const createUser = async (
 
     
 };
-const login = async (
-    name: string,
-    Password: string
-) => {
-    
 
-    /*if (
-        await client.db("ProjectMTG").collection("Users").findOne({name}) == name
-    )
-    throw "email already has an account";*/
-
-    
-};
 export { main, connect, createUser, User };

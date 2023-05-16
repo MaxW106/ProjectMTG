@@ -1,11 +1,14 @@
 import express from "express";
 import mtg from "mtgsdk-ts";
-import { MongoClient, ObjectId } from "mongodb";
+import { MongoClient, ObjectId, Collection } from "mongodb";
+const secret = require("./secret.json");
+const client = new MongoClient(secret.mongoUri);
 import { main, connect, createUser, User } from "./mongo/db";
 const path = require("path");
 const app = express();
 
 import db from "./db.json";
+import { name } from "ejs";
 
 let pages_logged_in = ["home", "decks", "drawtest", "login"];
 let pages_not_logged_in = ["home", "login"];
@@ -55,9 +58,26 @@ app.get("/login", (req, res) => {
 	res.render("login", { pages: pages_logged_in });
 });
 app.post("/login", async(req,res) =>{
-		req.body.username as string,
-		req.body.password as string
-		res.render("home", {pages: pages_logged_in});
+	try{
+	client.connect();
+	let username = req.body.username;
+	let psw = req.body.password;
+	
+	let user = await client.db("ProjectMTG")
+	.collection("Users")
+	.findOne({name:username});
+	let pass = user?.password;
+
+	if(pass == psw){
+		res.redirect("home");
+	}
+	else{
+		res.redirect("404");
+	}
+}
+catch(e){
+	console.error(e);
+}
 })
 
 app.get("/register", (req, res) => {
