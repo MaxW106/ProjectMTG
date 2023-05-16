@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+		<script src="/javascript/errorBox.js" defer></script>
+	</head>
     <%- include("partials/head", { title: "Login"}) %>
     
     <body>
@@ -14,6 +17,9 @@
           <div class="login">
       <div class="card">
         <h1 class="login-header">LOGIN</h1>
+        <% if(triedToLogin) { %>
+          <p>The username or password is incorrect!</p>
+        <% } %>
         <form class="login-form" action="/login" method="post">
           <div class="form-input">
             <label for="username">Username</label>

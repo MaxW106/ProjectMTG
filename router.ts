@@ -9,6 +9,7 @@ const app = express();
 
 import db from "./db.json";
 import { name } from "ejs";
+import { error } from "console";
 
 let pages_logged_in = ["home", "decks", "drawtest", "login"];
 let pages_not_logged_in = ["home", "login"];
@@ -46,6 +47,7 @@ app.get("/home", (req, res) => {
 		searchString: searchString,
 	});
 });
+
 app.get("/decks", (req, res) => {
 	res.render("decks", { pages: pages_logged_in });
 });
@@ -55,30 +57,28 @@ app.get("/drawtest", (req, res) => {
 });
 
 app.get("/login", (req, res) => {
-	res.render("login", { pages: pages_logged_in });
+	res.render("login", { pages: pages_logged_in, triedToLogin: false });
 });
 app.post("/login", async(req,res) =>{
 	try{
 	client.connect();
 	let username = req.body.username;
-	let psw = req.body.password;
-	
+	let psw = req.body.password;	
 	let user = await client.db("ProjectMTG")
 	.collection("Users")
 	.findOne({name:username});
 	let pass = user?.password;
-
 	if(pass == psw){
 		res.redirect("home");
 	}
 	else{
-		res.redirect("404");
+		res.render("login", {pages:pages_not_logged_in, triedToLogin : true})
 	}
 }
 catch(e){
 	console.error(e);
 }
-})
+});
 
 app.get("/register", (req, res) => {
 	res.render("register", {

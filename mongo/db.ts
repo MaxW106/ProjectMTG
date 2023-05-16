@@ -65,7 +65,10 @@ const createUser = async (
     )
     throw "email already has an account";
 
-    
+	if(hashedPassword)
+    await client.db("ProjectMTG")
+	.collection("Users")
+	.insertOne({user});
 };
 
 export { main, connect, createUser, User };
