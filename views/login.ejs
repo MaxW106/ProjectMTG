@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+		<script src="/javascript/errorBox.js" defer></script>
+	</head>
     <%- include("partials/head", { title: "Login"}) %>
     
     <body>
@@ -14,7 +17,10 @@
           <div class="login">
       <div class="card">
         <h1 class="login-header">LOGIN</h1>
-        <form class="login-form" action="" method="post">
+        <% if(triedToLogin) { %>
+          <p>The username or password is incorrect!</p>
+        <% } %>
+        <form class="login-form" action="/login" method="post">
           <div class="form-input">
             <label for="username">Username</label>
             <input type="text" id="username" name="username" required>
@@ -27,8 +33,8 @@
             <input type="checkbox" id="remember" name="remember">
             <label for="remember">Remember me</label>
           </div>
-          <input type="submit" id="login-button" value="Login">
-          <input type="button" id="signup-button" value="Registreer" onclick="window.location.href='register'">
+          <input type="submit" class="login-signup" id="login-button" value="Login">
+          <input type="button" class="login-signup" id="signup-button" value="Registreer" onclick="window.location.href='register'">
         </form>
       </div>
     </div>

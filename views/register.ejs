@@ -10,6 +10,7 @@
     <%- include("partials/header") %>
     <div id="login">
         <div id="login-container">
+<<<<<<< HEAD
             <figure id="login-image">
                 <a href="home" id="logo">
                     <img src="images/wizard.png" alt="Logo">
@@ -42,4 +43,44 @@
 			</div>
 		</div>
 	</body>
+=======
+    <figure id="login-image">
+        <a href="home" id="logo">
+          <img src="images/wizard.png" alt="Logo">
+        </a>
+      </figure>
+    <div class="login">
+        <div class="card">
+            <h1 class="login-header">Register</h1>
+            <form action="/register" id="form-register" method="post">
+                <div class="form-input">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-input">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email" required>
+                </div>
+                <div class="form-input">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-input">
+                    <label for="securePassword">Password Verification:</label>
+                    <input type="password" id="securePassword" name="securePassword" required>
+                </div>
+                <div id="error-password"></div>
+        <button type="submit" id="register-button">Registrer</button>
+        </form>
+    </div>
+    </div>
+    </div>
+    </div>
+  </body>
+</html>
+
+
+    <%- include("partials/footer") %>
+</body>
+>>>>>>> eeef7ef6d3716715d9673ed719480cc062f46150
 </html>

@@ -1,8 +1,15 @@
 import express from "express";
 import session from "express-session";
 import mtg from "mtgsdk-ts";
+<<<<<<< HEAD
 import { MongoClient, ObjectId } from "mongodb";
 import { connect, createUser, User } from "./mongo/db";
+=======
+import { MongoClient, ObjectId, Collection } from "mongodb";
+const secret = require("./secret.json");
+const client = new MongoClient(secret.mongoUri);
+import { main, connect, createUser, User } from "./mongo/db";
+>>>>>>> eeef7ef6d3716715d9673ed719480cc062f46150
 const path = require("path");
 const app = express();
 
@@ -11,10 +18,14 @@ const SESSION_SECRET = Buffer.from(require("os").userInfo().username).toString(
 );
 
 import db from "./db.json";
+import { name } from "ejs";
+import { error } from "console";
 
 let pages_logged_in = ["home", "decks", "drawtest", "login"];
 let pages_not_logged_in = ["home", "login"];
 
+app.use(express.json({ limit: '1mb' }));
+app.use(express.urlencoded({ extended:true}));
 app.set("port", 3000);
 app.set("view engine", "ejs");
 
@@ -61,37 +72,50 @@ app.get("/drawtest", (req, res) => {
 });
 
 app.get("/login", (req, res) => {
-	res.render("login", { pages: pages_logged_in });
+	res.render("login", { pages: pages_logged_in, triedToLogin: false });
+});
+app.post("/login", async(req,res) =>{
+	try{
+	client.connect();
+	let username = req.body.username;
+	let psw = req.body.password;	
+	let user = await client.db("ProjectMTG")
+	.collection("Users")
+	.findOne({name:username});
+	let pass = user?.password;
+	if(pass == psw){
+		res.redirect("home");
+	}
+	else{
+		res.render("login", {pages:pages_not_logged_in, triedToLogin : true})
+	}
+}
+catch(e){
+	console.error(e);
+}
 });
 
-app.get("/logout", (req, res) => {
-	req.session.user = null;
-	res.render("login");
-});
-
-let securePassword: string;
 app.get("/register", (req, res) => {
 	res.render("register", {
-		securePassword: securePassword,
 		pages: pages_logged_in,
 	});
 });
 
-app.post("/register", (req, res) => {
-	/*try {
+app.post("/register", async(req, res) => {
+	try {
 		await createUser(
 			req.body.username as string,
 			req.body.email as string,
 			req.body.password as string
 		);
-		res.render("register", { emailTaken: false, pages: pages_logged_in });
+		res.render("register", { emailTaken: false, pages: pages_logged_in});
 	} catch (e) {
 		console.log(e);
 		res.render("register", {
 			emailTaken: true,
 			pages: pages_not_logged_in,
 		});
-	}*/
+	}
 
 	console.log((req.body.email as string) ?? "");
 	res.render("register", { pages: pages_logged_in });
