@@ -1,9 +1,14 @@
 import express from "express";
+import session from "express-session";
 import mtg from "mtgsdk-ts";
 import { MongoClient, ObjectId } from "mongodb";
 import { connect, createUser, User } from "./mongo/db";
 const path = require("path");
 const app = express();
+
+const SESSION_SECRET = Buffer.from(require("os").userInfo().username).toString(
+	"base64"
+);
 
 import db from "./db.json";
 
@@ -15,6 +20,11 @@ app.set("view engine", "ejs");
 
 app.use(express.static(path.join(__dirname, "public")));
 
+/*
+app.use((req, res, next) => {
+	res.locals.user = req.session.user;
+});
+*/
 connect();
 
 app.get("/", (req, res) => {
@@ -54,6 +64,11 @@ app.get("/login", (req, res) => {
 	res.render("login", { pages: pages_logged_in });
 });
 
+app.get("/logout", (req, res) => {
+	req.session.user = null;
+	res.render("login");
+});
+
 let securePassword: string;
 app.get("/register", (req, res) => {
 	res.render("register", {
@@ -62,13 +77,8 @@ app.get("/register", (req, res) => {
 	});
 });
 
-<<<<<<< HEAD
 app.post("/register", (req, res) => {
 	/*try {
-=======
-app.post("/register", async (req, res) => {
-	try {
->>>>>>> b0d445021890a7afb0dc0ef1e65798a6985da725
 		await createUser(
 			req.body.username as string,
 			req.body.email as string,
@@ -86,7 +96,6 @@ app.post("/register", async (req, res) => {
 	console.log((req.body.email as string) ?? "");
 	res.render("register", { pages: pages_logged_in });
 });
-
 
 app.get("/deck", (req, res) => {
 	let number = req.query.number as string;
