@@ -70,5 +70,12 @@ const createUser = async (
 	.collection("Users")
 	.insertOne({user});
 };
+const checkPassword = async (
+    password: string,
+	checkPassword: string
+) => {
+	
 
-export { main, connect, createUser, User };
+}
+
+export { main, connect, createUser,checkPassword, User };
