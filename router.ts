@@ -82,7 +82,7 @@ catch(e){
 
 app.get("/register", (req, res) => {
 	res.render("register", {
-		pages: pages_logged_in,
+		pages: pages_logged_in, triedToRegister: false
 	});
 });
 
@@ -97,7 +97,7 @@ app.post("/register", async(req, res) => {
 			res.render("register", { emailTaken: false, pages: pages_logged_in});
 		}
 		else{
-			res.redirect("404");
+			res.render("register",{pages:pages_not_logged_in,triedToRegister: true});
 		}
 	} catch (e) {
 		console.log(e);
