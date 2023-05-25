@@ -64,7 +64,10 @@ const createUser = async (
             .findOne({ email: email })
     )
     throw "email already has an account";
-
+	await 
+		client.db("ProjectMTG")
+		.collection("Users")
+		.insertOne(user);
 	
 };
 
