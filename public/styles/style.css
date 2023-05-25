@@ -246,6 +246,30 @@ form button {
 	background-color: var(--bg-color-purple);
   }
   
+  .login-error {
+	background-color: #ffcccc;
+	color: black;
+	padding: 10px;
+	text-align: center;
+	border: 2px solid #ff3333;
+	box-shadow: 0 0 10px #ff3333;
+	animation: glowing 1.5s infinite;
+	margin-bottom: 1rem;
+  }
+  
+  @keyframes glowing {
+	0% {
+	  box-shadow: 0 0 5px #ff3333;
+	}
+	50% {
+	  box-shadow: 0 0 20px #ff3333;
+	}
+	100% {
+	  box-shadow: 0 0 5px #ff3333;
+	}
+  }
+  
+  
 /*Einde login*/
 /* Register*/
 .register-page {
