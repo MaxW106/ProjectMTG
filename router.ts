@@ -3,7 +3,7 @@ import mtg from "mtgsdk-ts";
 import { MongoClient, ObjectId, Collection } from "mongodb";
 const secret = require("./secret.json");
 const client = new MongoClient(secret.mongoUri);
-import { main, connect, createUser,checkPassword, User } from "./mongo/db";
+import { main, connect, createUser, User } from "./mongo/db";
 const path = require("path");
 const app = express();
 
@@ -94,7 +94,7 @@ app.post("/register", async(req, res) => {
 				req.body.email as string,
 				req.body.password as string
 			);
-			res.render("register", { emailTaken: false, pages: pages_logged_in});
+			res.render("register", { emailTaken: false, pages: pages_logged_in,triedToRegister: false});
 		}
 		else{
 			res.render("register",{pages:pages_not_logged_in,triedToRegister: true});
