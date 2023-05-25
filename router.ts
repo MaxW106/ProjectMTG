@@ -4,7 +4,7 @@ import mtg from "mtgsdk-ts";
 import { MongoClient, ObjectId, Collection } from "mongodb";
 const secret = require("./secret.json");
 const client = new MongoClient(secret.mongoUri);
-import { main, connect, createUser, User } from "./mongo/db";
+import { main, connect, createUser,checkPassword, User } from "./mongo/db";
 const path = require("path");
 const app = express();
 
@@ -94,18 +94,32 @@ app.post("/login", async (req, res) => {
 
 app.get("/register", (req, res) => {
 	res.render("register", {
-		pages: pages_logged_in,
+		pages: pages_logged_in, triedToRegister: false
 	});
 });
 
 app.post("/register", async (req, res) => {
 	try {
+<<<<<<< HEAD
 		await createUser(
 			req.body.username as string,
 			req.body.email as string,
 			req.body.password as string
 		);
 		res.render("register", { emailTaken: false, pages: pages_logged_in });
+=======
+		if(req.body.password == req.body.securePassword){
+			await createUser(
+				req.body.username as string,
+				req.body.email as string,
+				req.body.password as string
+			);
+			res.render("register", { emailTaken: false, pages: pages_logged_in});
+		}
+		else{
+			res.render("register",{pages:pages_not_logged_in,triedToRegister: true});
+		}
+>>>>>>> 0f195431446a9d60eec8fd51b759333868b8acda
 	} catch (e) {
 		console.log(e);
 		res.render("register", {

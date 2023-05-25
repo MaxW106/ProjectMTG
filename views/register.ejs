@@ -18,6 +18,9 @@
     <div class="login">
         <div class="card">
             <h1 class="login-header">Register</h1>
+            <% if(triedToRegister) { %>
+                <p>The passwords don't match!</p>
+              <% } %>
             <form action="/register" id="form-register" method="post">
                 <div class="form-input">
                     <label for="username">Username:</label>
