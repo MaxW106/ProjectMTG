@@ -4,9 +4,10 @@ import mtg from "mtgsdk-ts";
 import { MongoClient, ObjectId, Collection } from "mongodb";
 const secret = require("./secret.json");
 const client = new MongoClient(secret.mongoUri);
-import { main, connect, createUser, checkPassword, User } from "./mongo/db";
+import { main, connect, createUser, User } from "./mongo/db";
 const path = require("path");
 const app = express();
+let validator = require("email-validator");
 
 const SESSION_SECRET = Buffer.from(require("os").userInfo().username).toString(
 	"base64"
@@ -96,26 +97,38 @@ app.get("/register", (req, res) => {
 	res.render("register", {
 		pages: pages_logged_in,
 		triedToRegister: false,
+		triedToRegisterMail: false,
 	});
 });
 
 app.post("/register", async (req, res) => {
 	try {
-		if (req.body.password == req.body.securePassword) {
+		if (req.body.password != req.body.securePassword) {
+			res.render("register", {
+				pages: pages_not_logged_in,
+				triedToRegister: true,
+				triedToRegisterMail: false,
+			});
+		} else if (!validator.validate(req.body.email)) {
+			res.render("register", {
+				pages: pages_not_logged_in,
+				triedToRegister: false,
+				triedToRegisterMail: true,
+			});
+		} else if (
+			validator.validate(req.body.email) &&
+			req.body.password == req.body.securePassword
+		) {
 			await createUser(
 				req.body.username as string,
 				req.body.email as string,
 				req.body.password as string
 			);
-			res.render("register", {
+			res.render("drawtest", {
 				emailTaken: false,
 				pages: pages_logged_in,
 				triedToRegister: false,
-			});
-		} else {
-			res.render("register", {
-				pages: pages_not_logged_in,
-				triedToRegister: true,
+				triedToRegisterMail: false,
 			});
 		}
 	} catch (e) {
@@ -123,11 +136,10 @@ app.post("/register", async (req, res) => {
 		res.render("register", {
 			emailTaken: true,
 			pages: pages_not_logged_in,
+			triedToRegister: false,
+			triedToRegisterMail: false,
 		});
 	}
-
-	console.log((req.body.email as string) ?? "");
-	res.render("register", { pages: pages_logged_in, triedToRegister: true });
 });
 
 app.get("/deck", (req, res) => {

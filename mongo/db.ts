@@ -76,18 +76,7 @@ const createUser = async (
 			.findOne({ email: email })
 	)
 		throw "email already has an account";
-
-	if (hashedPassword)
-		await client
-			.db("ProjectMTG")
-			.collection("Users")
-			.insertOne({
-				user: user.name,
-				email: user.email,
-				password: user.password,
-				decks: user.decks,
-			});
+	await client.db("ProjectMTG").collection("Users").insertOne(user);
 };
-const checkPassword = async (password: string, checkPassword: string) => {};
 
-export { main, connect, createUser, checkPassword, User, Deck };
+export { main, connect, createUser, User };
