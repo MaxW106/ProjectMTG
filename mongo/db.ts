@@ -1,4 +1,5 @@
 import { MongoClient, ObjectId, Collection } from "mongodb";
+import { Card } from "mtgsdk-ts";
 const secret = require("../secret.json");
 const client = new MongoClient(secret.mongoUri);
 
@@ -7,13 +8,22 @@ interface User {
 	email: string;
 	name: string;
 	password: string;
+	decks: Deck[];
 }
+
+interface Deck {
+	_id?: ObjectId;
+	name: string;
+	cards: number[];
+}
+
 let users: User[] = [
-	{ name: "Artjom", email: "artjom@gmail.com", password: "test"},
-	{ name: "Daniel", email: "Daniel@gmail.com", password: "test"},
-	{ name: "Max", email: "Max@gmail.com", password: "test"},
-	{ name: "Bilal", email: "Bilal@gmail.com", password: "test"},
+	{ name: "Artjom", email: "artjom@gmail.com", password: "test", decks: [] },
+	{ name: "Daniel", email: "Daniel@gmail.com", password: "test", decks: [] },
+	{ name: "Max", email: "Max@gmail.com", password: "test", decks: [] },
+	{ name: "Bilal", email: "Bilal@gmail.com", password: "test", decks: [] },
 ];
+
 const main = async () => {
 	try {
 		await client.connect();
@@ -46,36 +56,38 @@ const connect = async () => {
 		console.error(error);
 	}
 };
+
 const createUser = async (
-    name: string,
-    email: string,
-    hashedPassword: string
+	name: string,
+	email: string,
+	hashedPassword: string
 ) => {
-    let user: User = {
-        name: name,
-        email: email,
-        password: hashedPassword
-    };
+	let user: User = {
+		name: name,
+		email: email,
+		password: hashedPassword,
+		decks: [],
+	};
 
-    if (
-        await client
-            .db("ProjectMTG")
-            .collection("Users")
-            .findOne({ email: email })
-    )
-    throw "email already has an account";
+	if (
+		await client
+			.db("ProjectMTG")
+			.collection("Users")
+			.findOne({ email: email })
+	)
+		throw "email already has an account";
 
-	if(hashedPassword)
-    await client.db("ProjectMTG")
-	.collection("Users")
-	.insertOne({user});
+	if (hashedPassword)
+		await client
+			.db("ProjectMTG")
+			.collection("Users")
+			.insertOne({
+				user: user.name,
+				email: user.email,
+				password: user.password,
+				decks: user.decks,
+			});
 };
-const checkPassword = async (
-    password: string,
-	checkPassword: string
-) => {
-	
+const checkPassword = async (password: string, checkPassword: string) => {};
 
-}
-
-export { main, connect, createUser,checkPassword, User };
+export { main, connect, createUser, checkPassword, User, Deck };

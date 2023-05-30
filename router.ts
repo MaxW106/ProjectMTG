@@ -110,6 +110,7 @@ app.post("/register", async (req, res) => {
 			res.render("register", {
 				emailTaken: false,
 				pages: pages_logged_in,
+				triedToRegister: false,
 			});
 		} else {
 			res.render("register", {
@@ -126,7 +127,7 @@ app.post("/register", async (req, res) => {
 	}
 
 	console.log((req.body.email as string) ?? "");
-	res.render("register", { pages: pages_logged_in });
+	res.render("register", { pages: pages_logged_in, triedToRegister: true });
 });
 
 app.get("/deck", (req, res) => {
