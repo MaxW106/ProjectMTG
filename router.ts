@@ -4,7 +4,7 @@ import mtg from "mtgsdk-ts";
 import { MongoClient, ObjectId, Collection } from "mongodb";
 const secret = require("./secret.json");
 const client = new MongoClient(secret.mongoUri);
-import { main, connect, createUser, User } from "./mongo/db";
+import { connect, createUser, User } from "./mongo/db";
 const path = require("path");
 const app = express();
 let validator = require("email-validator");
@@ -17,8 +17,7 @@ import db from "./db.json";
 import { name } from "ejs";
 import { error } from "console";
 
-let pages_logged_in = ["home", "decks", "drawtest", "login"];
-let pages_not_logged_in = ["home", "login"];
+let pages = ["home", "decks", "drawtest", "login"];
 
 app.use(express.json({ limit: "1mb" }));
 app.use(express.urlencoded({ extended: true }));
@@ -53,22 +52,22 @@ app.get("/home", (req, res) => {
 	}
 
 	res.render("home", {
-		pages: pages_logged_in,
+		pages: pages,
 		cards: cards,
 		searchString: searchString,
 	});
 });
 
 app.get("/decks", (req, res) => {
-	res.render("decks", { pages: pages_logged_in });
+	res.render("decks", { pages: pages });
 });
 
 app.get("/drawtest", (req, res) => {
-	res.render("drawtest", { pages: pages_logged_in });
+	res.render("drawtest", { pages: pages });
 });
 
 app.get("/login", (req, res) => {
-	res.render("login", { pages: pages_logged_in, triedToLogin: false });
+	res.render("login", { pages: pages, triedToLogin: false });
 });
 app.post("/login", async (req, res) => {
 	try {
@@ -84,7 +83,7 @@ app.post("/login", async (req, res) => {
 			res.redirect("home");
 		} else {
 			res.render("login", {
-				pages: pages_not_logged_in,
+				pages: pages,
 				triedToLogin: true,
 			});
 		}
@@ -95,7 +94,7 @@ app.post("/login", async (req, res) => {
 
 app.get("/register", (req, res) => {
 	res.render("register", {
-		pages: pages_logged_in,
+		pages: pages,
 		triedToRegister: false,
 		triedToRegisterMail: false,
 	});
@@ -105,13 +104,13 @@ app.post("/register", async (req, res) => {
 	try {
 		if (req.body.password != req.body.securePassword) {
 			res.render("register", {
-				pages: pages_not_logged_in,
+				pages: pages,
 				triedToRegister: true,
 				triedToRegisterMail: false,
 			});
 		} else if (!validator.validate(req.body.email)) {
 			res.render("register", {
-				pages: pages_not_logged_in,
+				pages: pages,
 				triedToRegister: false,
 				triedToRegisterMail: true,
 			});
@@ -126,7 +125,7 @@ app.post("/register", async (req, res) => {
 			);
 			res.render("drawtest", {
 				emailTaken: false,
-				pages: pages_logged_in,
+				pages: pages,
 				triedToRegister: false,
 				triedToRegisterMail: false,
 			});
@@ -135,7 +134,7 @@ app.post("/register", async (req, res) => {
 		console.log(e);
 		res.render("register", {
 			emailTaken: true,
-			pages: pages_not_logged_in,
+			pages: pages,
 			triedToRegister: false,
 			triedToRegisterMail: false,
 		});
@@ -146,12 +145,12 @@ app.get("/deck", (req, res) => {
 	let number = req.query.number as string;
 	if (!number) number = "0";
 	let i = parseInt(number);
-	res.render("deck_view", { pages: pages_logged_in, deck: db.decks[i] });
+	res.render("deck_view", { pages: pages, deck: db.decks[i] });
 });
 
 app.get("/*", (req, res) => {
 	res.status(404);
-	res.render("404", { pages: pages_logged_in });
+	res.render("404", { pages: pages });
 });
 
 app.listen(app.get("port"), () => {
