@@ -2,15 +2,15 @@
 <html lang="en">
 	<%- include("partials/head", { title: "DrawTest"}) %>
 	<body>
-		<header><%- include("partials/header", { pages: pages }) %></header>
+		<%- include("partials/header", { pages: pages }) %>
 		<main>
 			<div class="deckview-grid">
 				<div class="topinfo">
 					<div class="left">
-						<img
+						<img 
 							src="<%= deck.imageurl %>"
 							alt="<%= deck.name %>"
-							width="200px"<%- include("partials/head", {title: "landing page"}) %>
+							width="200px"
 						/>
 					</div>
 					<div class="middle">
