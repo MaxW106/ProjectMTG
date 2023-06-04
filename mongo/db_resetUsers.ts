@@ -1,5 +1,5 @@
 import { MongoClient, ObjectId } from "mongodb";
-import { mongoUri } from "./secret.json";
+import { mongoUri } from "../secret.json";
 
 const client = new MongoClient(mongoUri);
 
