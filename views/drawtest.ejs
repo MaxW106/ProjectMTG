@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include("partials/head", { title: "DrawTest"}) %>
-    <body>
-        <%- include("partials/header", { pages: pages }) %>
-        <main>
-            <div class="controls-container">
-                <select name="deck-choser" class="deck-choser">
-                    <option value="deck_1">deck1</option>
-                    <option value="deck_2">deck2</option>
-                    <option value="deck_3">deck3</option>
-                    <option value="deck_4">deck4</option>
-                    <option value="deck_5">deck5</option>
-                </select>
-                <input class="drawpercentage" type="drawpercentage" placeholder="Cardname">
-                <button class="track" type="button">track</button>
-                <p class="drawpercentage-display">5%</p>
-                <button id="btn-draw" type="button">draw</button>
-                <button id="btn-reset" type="button">reset</button>
-                <img id="drawpile" src="images/card-back.png" alt="drawpile">
-                <img id="discardpile" src="images/card-front.jpeg" alt="discardpile">
-            </div>
-        </main>
-        <%- include("partials/footer") %>
-    </body>
+	<%- include("partials/head", { title: "DrawTest"}) %>
+	<body>
+		<%- include("partials/header", { pages: pages }) %>
+		<main>
+			<div class="controls-container">
+				<select name="deck-choser" class="deck-choser">
+					<option value="deck_1">deck1</option>
+					<option value="deck_2">deck2</option>
+					<option value="deck_3">deck3</option>
+					<option value="deck_4">deck4</option>
+					<option value="deck_5">deck5</option>
+				</select>
+				<input
+					class="drawpercentage"
+					type="drawpercentage"
+					placeholder="Cardname"
+				/>
+				<button class="track" type="button">track</button>
+				<p class="drawpercentage-display">5%</p>
+				<button id="btn-draw" type="button">draw</button>
+				<button id="btn-reset" type="button">reset</button>
+				<img id="drawpile" src="images/card-back.png" alt="drawpile" />
+				<img
+					id="discardpile"
+					src="images/card-back.png"
+					alt="discardpile"
+				/>
+			</div>
+		</main>
+		<%- include("partials/footer") %>
+	</body>
 </html>

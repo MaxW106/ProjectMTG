@@ -99,8 +99,10 @@ app.get("/deck", async (req, res) => {
 	});
 });
 
-app.get("/drawtest", (req, res) => {
-	res.render("drawtest", { pages: pages });
+app.get("/drawtest", async (req, res) => {
+	let deck = getDeckById(1);
+	let cards = await getCardsFromDeck(1);
+	res.render("drawtest", { pages: pages, deck: deck, cards: cards });
 });
 
 app.get("/login", (req, res) => {
