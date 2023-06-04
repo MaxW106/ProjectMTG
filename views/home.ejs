@@ -5,7 +5,7 @@
 	<body>
 		<%- include("partials/header", {pages : pages}) -%>
 		<main>
-			<form action="#" method="GET">
+			<form action="" method="GET">
 				<input
 					type="search"
 					name="searchString"
@@ -20,23 +20,17 @@
 				<% for (let i = 0; i < Math.min(cards.length, 10); i++) { %> <%-
 				include("partials/card", {card: cards[i]}) %> <%} %>
 			</section>
-			<!-- <div>
-				<img src="" alt="" />
-				<h2><% cards.name %></h2>
-				<p>Type: <% cards.type %> <br>
-				   Set name: <% cards.setName %> <br>
-				   Rarity: <% cards.rarity %>	
-				</p>
-				<form action="#" method="GET" class="">
-					<select name="Deckname" multiple>
-						<option value="A">Deckname: A</option>
-						<option value="B">Deckname: B</option>
-						<option value="C">Deckname: C</option>
-						<option value="D">Deckname: D</option>
-						<option value="E">Deckname: E</option>
-					</select>
-				</form>
-			</div> -->
+			<section class="home">
+				<a
+					href="http://localhost:3000/home?searchString=<%= searchString %>&cardPage=<%= cardPage <= 1 ? 1 : cardPage - 1 %>"
+				>
+					<button>Previous</button></a
+				>
+				<a
+					href="http://localhost:3000/home?searchString=<%= searchString %>&cardPage=<%= cards.length < 10 ? cardPage : cardPage + 1 %>"
+					><button>Next</button></a
+				>
+			</section>
 		</main>
 		<%- include("partials/footer") -%>
 	</body>

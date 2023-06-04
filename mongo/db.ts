@@ -110,21 +110,23 @@ const createDeck = async (user_id: number, name: string) => {
 	await dbDecks.insertOne(newDeck);
 };
 
-const getDecks = () => {
+const getDecks = (): Deck[] => {
 	return decks;
 };
 
-const getDecksByUserId = (user_id: number) => {
+const getDecksByUserId = (user_id: number): Deck[] => {
 	return decks.filter((deck) => deck.user_id === user_id);
 };
 
-const getDeckById = (deck_id: number) => {
-	return decks.find((deck) => deck.id === deck_id);
+const getDeckById = (deck_id: number): Deck => {
+	let deck = decks.find((deck) => deck.id === deck_id);
+	if (typeof deck === "undefined") throw "deck not found";
+	return deck;
 };
 
 // cards
 // from api
-const getCardsByName = async (card_name: string) => {
+const getCardsByName = async (card_name: string): Promise<Card[]> => {
 	let cards = (await mtg.Cards.where({ name: card_name }))
 		.filter((card) => typeof card.multiverseid !== "undefined")
 		.map(
@@ -144,10 +146,10 @@ const getCardsByName = async (card_name: string) => {
 	return cards;
 };
 
-const getCardByName = async (card_name: string) => {
-	let api_card = (await mtg.Cards.where({ name: card_name })).find(
-		(card) => card.name === card_name
-	);
+const getCardByName = async (card_name: string): Promise<Card> => {
+	let api_card = (await mtg.Cards.where({ name: card_name }))
+		.filter((card) => typeof card.multiverseid !== "undefined")
+		.find((card) => card.name === card_name);
 
 	if (typeof api_card == "undefined") throw "card not found";
 
@@ -165,7 +167,7 @@ const getCardByName = async (card_name: string) => {
 	return card;
 };
 
-const getRandomCards = async (amount: number) => {
+const getRandomCards = async (amount: number): Promise<Card[]> => {
 	let cards = (await mtg.Cards.where({ random: true, pageSize: amount }))
 		.map(
 			(card) =>
@@ -237,6 +239,12 @@ export {
 	getDecks,
 	getDecksByUserId,
 	getDeckById,
+	getCardByName,
+	getCardsByName,
+	getRandomCards,
+	getCardsFromDeck,
+	addCardToDeck,
 	User,
 	Deck,
+	Card,
 };

@@ -12,7 +12,6 @@ body {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
-	
 }
 
 .boven .wrapper,
@@ -87,9 +86,9 @@ footer {
 	padding: 20px 0 20px 0;
 	margin-top: auto;
 }
-footer h1{
+footer h1 {
 	font-size: larger;
-  }
+}
 form {
 	display: flex;
 	justify-content: center;
@@ -101,7 +100,8 @@ form input {
 	color: var(--bg-color-black);
 }
 
-form button {
+form button,
+section.home button {
 	margin-left: 10px;
 	border-radius: 7px;
 	background-color: var(--bg-color-purple);
@@ -130,29 +130,28 @@ form button {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: calc(100vh - 60px); 
+	height: calc(100vh - 60px);
 	margin-bottom: 2rem;
-  }
-  
-  #login-container {
+}
+
+#login-container {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-  }
-  
-  #login-image {
+}
+
+#login-image {
 	display: flex;
 	justify-content: center;
-	margin-right: calc(15%); 
-  }
-  
-  
-  #login-image img {
+	margin-right: calc(15%);
+}
+
+#login-image img {
 	height: 250px;
 	width: 250px;
-  }
-  
-  .login {
+}
+
+.login {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -162,49 +161,49 @@ form button {
 	padding: 2rem;
 	width: 400px;
 	max-width: 500px;
-	background-color: #1996DF;
+	background-color: #1996df;
 	padding: 20px;
 	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 	color: #1c0200;
 	margin-right: 12rem;
-  }
-  
-  .login h1 {
+}
+
+.login h1 {
 	margin-bottom: 1rem;
-  }
-  
-  .login form {
+}
+
+.login form {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-  }
-  
-  .login .form-input {
+}
+
+.login .form-input {
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 1rem;
-  }
-  
-  .login .form-input label {
+}
+
+.login .form-input label {
 	margin-bottom: 0.5rem;
-  }
-  
-  .login .form-input input[type="text"],
-  .login .form-input input[type="password"] {
+}
+
+.login .form-input input[type="text"],
+.login .form-input input[type="password"] {
 	padding: 0.5rem;
 	border: 1px solid #ccc;
 	border-radius: 5px;
-  }
-  
-  .login .form-input input[type="checkbox"] {
+}
+
+.login .form-input input[type="checkbox"] {
 	margin-right: 0.5rem;
-  }
-  
-  .login .form-input label[for="remember"] {
+}
+
+.login .form-input label[for="remember"] {
 	display: inline;
-  }
-  
-  .login .form-input input[type="submit"] {
+}
+
+.login .form-input input[type="submit"] {
 	background-color: #007bff;
 	border: none;
 	color: #fff;
@@ -212,20 +211,19 @@ form button {
 	border-radius: 5px;
 	cursor: pointer;
 	margin-top: 1rem;
-  }
-  
-  
-  .form-input label[for="remember"] {
+}
+
+.form-input label[for="remember"] {
 	display: block;
 	margin: 0 auto;
 	text-align: center;
-  }  
+}
 
 .login-header {
 	text-align: center;
 	font-size: 2em;
-  }
-  .login-signup {
+}
+.login-signup {
 	background-color: #025686;
 	border: none;
 	color: white;
@@ -240,13 +238,13 @@ form button {
 	box-shadow: 0px 5px 5px #025686(0, 0, 0, 0.3);
 	transition: all 0.3s ease;
 	width: 100%;
-  }
-  
-  .login-signup:hover {
+}
+
+.login-signup:hover {
 	background-color: var(--bg-color-purple);
-  }
-  
-  .login-error {
+}
+
+.login-error {
 	background-color: #ffcccc;
 	color: black;
 	padding: 10px;
@@ -255,160 +253,155 @@ form button {
 	box-shadow: 0 0 10px #ff3333;
 	animation: glowing 1.5s infinite;
 	margin-bottom: 1rem;
-  }
-  
-  @keyframes glowing {
+}
+
+@keyframes glowing {
 	0% {
-	  box-shadow: 0 0 5px #ff3333;
+		box-shadow: 0 0 5px #ff3333;
 	}
 	50% {
-	  box-shadow: 0 0 20px #ff3333;
+		box-shadow: 0 0 20px #ff3333;
 	}
 	100% {
-	  box-shadow: 0 0 5px #ff3333;
+		box-shadow: 0 0 5px #ff3333;
 	}
-  }
-  
-  
+}
+
 /*Einde login*/
 /* Register*/
 .register-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
 }
 
 #register-form {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
-    text-align: center;
+	background-color: white;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+	text-align: center;
 }
 
 #register-form h1 {
-    margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 
 #register-form .form-input {
-    margin-bottom: 10px;
-    text-align: left;
+	margin-bottom: 10px;
+	text-align: left;
 }
 
 #register-button {
-    background-color: #025686;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 25px;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-	
+	background-color: #025686;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 25px;
+	box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+	transition: all 0.3s ease;
 }
 #register-button:hover {
 	background-color: var(--bg-color-purple);
-  }
-  
-
+}
 
 /*End register*/
 
-
 /*drawtest css*/
 .controls-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 1.5rem;
+	margin-top: 1rem;
 }
 
 .deck-choser {
-    order: 0;
-    align-self: flex-start;
-    width: 250px;
-    border-style: solid;
-    border-width: 3px;
-    border-color: black;
-    border-radius: 5px;
+	order: 0;
+	align-self: flex-start;
+	width: 250px;
+	border-style: solid;
+	border-width: 3px;
+	border-color: black;
+	border-radius: 5px;
 }
 
 .drawpercentage {
-    order: 1;
-    align-self: flex-start;
-    width: 240px;
-    border-style: solid;
-    border-width: 3px;
-    border-color: black;
-    border-radius: 5px;
+	order: 1;
+	align-self: flex-start;
+	width: 240px;
+	border-style: solid;
+	border-width: 3px;
+	border-color: black;
+	border-radius: 5px;
 }
 .track {
-    order: 2;
-    height: 50px;
-    width: 100px;
-    background-color: #a20da2;
-    color: white;
-    border-style: solid;
-    border-width: 3px;
-    border-color: black;
-    border-radius: 5px;
+	order: 2;
+	height: 50px;
+	width: 100px;
+	background-color: #a20da2;
+	color: white;
+	border-style: solid;
+	border-width: 3px;
+	border-color: black;
+	border-radius: 5px;
 }
 
 .drawpercentage-display {
-    order: 3;
-    align-self: center;
-    color: white;
-    margin-left: 0.5rem;
+	order: 3;
+	align-self: center;
+	color: white;
+	margin-left: 0.5rem;
 }
 
 #btn-draw {
-    order: 4;
-    margin-top: 1rem;
-    height: 50px;
-    width: 100px;
-    background-color: #a20da2;
-    color: white;
-    border-style: solid;
-    border-width: 3px;
-    border-color: black;
-    border-radius: 5px;
+	order: 4;
+	margin-top: 1rem;
+	height: 50px;
+	width: 100px;
+	background-color: #a20da2;
+	color: white;
+	border-style: solid;
+	border-width: 3px;
+	border-color: black;
+	border-radius: 5px;
 }
 
 #btn-reset {
-    order: 5;
-    margin-top: 1rem;
-    height: 50px;
-    width: 100px;
-    background-color: #a20da2;
-    color: white;
-    border-style: solid;
-    border-width: 3px;
-    border-color: black;
-    border-radius: 5px;
+	order: 5;
+	margin-top: 1rem;
+	height: 50px;
+	width: 100px;
+	background-color: #a20da2;
+	color: white;
+	border-style: solid;
+	border-width: 3px;
+	border-color: black;
+	border-radius: 5px;
 }
 
 #drawpile {
-    order: 6;
-    margin-top: 1rem;
-    height: 310px;
-    width: 210px;
+	order: 6;
+	margin-top: 1rem;
+	height: 310px;
+	width: 210px;
 }
 
 #discardpile {
-    order: 7;
-    margin-top: 1rem;
-    height: 310px;
-    width: 210px;
+	order: 7;
+	margin-top: 1rem;
+	height: 310px;
+	width: 210px;
 }
 
 /*einde drawtest css*/
@@ -517,50 +510,55 @@ form button {
 	grid-template-rows: repeat(2, 1fr);
 }*/
 
-.left{
+.left {
 	width: 120px;
 	height: 100px;
 }
 /* register */
-#register{
+#register {
 	color: var(--bg-color-white);
 	font-size: larger;
 }
 @media only screen and (max-width: 767px) {
 	body {
-	  font-size: 14px;
+		font-size: 14px;
 	}
-  
+
 	.container {
-	  padding: 10px;
+		padding: 10px;
 	}
-  
+
 	/* Voeg hier meer gsm-specifieke stijlen toe */
-  }
-  
-  /* Media query voor tablet (schermen tussen 768px en 1023px) */
-  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+}
+
+/* Media query voor tablet (schermen tussen 768px en 1023px) */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
 	body {
-	  font-size: 16px;
+		font-size: 16px;
 	}
-  
+
 	.container {
-	  padding: 20px;
+		padding: 20px;
 	}
-  
+
 	/* Voeg hier meer tablet-specifieke stijlen toe */
-  }
-  
-  /* Media query voor laptop (schermen groter dan 1024px) */
-  @media only screen and (min-width: 1024px) {
+}
+
+/* Media query voor laptop (schermen groter dan 1024px) */
+@media only screen and (min-width: 1024px) {
 	body {
-	  font-size: 18px;
+		font-size: 18px;
 	}
-  
+
 	.container {
-	  padding: 30px;
+		padding: 30px;
 	}
-  
+
 	/* Voeg hier meer laptop-specifieke stijlen toe */
-  }
-  
+}
+
+section.home {
+	text-align: center;
+	margin-top: -3rem;
+	margin-bottom: 2rem;
+}

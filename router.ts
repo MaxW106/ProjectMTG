@@ -2,7 +2,24 @@ import express from "express";
 const validator = require("email-validator");
 const path = require("path");
 
-import { connect, createUser, getUsers, getUserByName, User } from "./mongo/db";
+import {
+	connect,
+	createUser,
+	getUsers,
+	getUserByName,
+	createDeck,
+	getDecks,
+	getDecksByUserId,
+	getDeckById,
+	getCardByName,
+	getCardsByName,
+	getRandomCards,
+	getCardsFromDeck,
+	addCardToDeck,
+	User,
+	Deck,
+	Card,
+} from "./mongo/db";
 import db from "./db.json";
 
 // express setup
@@ -19,36 +36,47 @@ connect();
 
 // other setup
 let pages = ["home", "decks", "drawtest", "login"];
-let loggedInUser;
+let currentUser: User | undefined;
 
 // routes
 app.get("/", (req, res) => {
 	res.render("landingpage");
 });
 
-app.get("/home", (req, res) => {
+app.get("/home", async (req, res) => {
 	res.type("html");
-	let searchString = req.query.searchString as string;
-	if (!searchString) searchString = "";
-	let cards: any[] = [];
+
+	let searchString = (req.query.searchString as string) ?? "";
+	let cardPage = parseInt((req.query.cardPage as string) ?? "1");
+
+	let cards: Card[] = [];
 	if (searchString !== "") {
-		cards = db.cards.filter((card, index, array) => {
-			return card.name.toLowerCase().includes(searchString.toLowerCase());
-		});
+		cards = (await getCardsByName(searchString)).slice(
+			(cardPage - 1) * 10,
+			cardPage * 10
+		);
 	}
 	if (cards.length == 0) {
-		cards = db.cards.slice(0, 10);
+		cards = await getRandomCards(10);
 	}
 
 	res.render("home", {
 		pages: pages,
 		cards: cards,
 		searchString: searchString,
+		cardPage: cardPage,
 	});
 });
 
-app.get("/decks", (req, res) => {
-	res.render("decks", { pages: pages });
+app.get("/decks", async (req, res) => {
+	if (typeof currentUser == "undefined") {
+		res.redirect("login");
+		return;
+	}
+
+	let decks = getDecksByUserId(currentUser.id);
+
+	res.render("decks", { pages: pages, decks: decks });
 });
 
 app.get("/deck", (req, res) => {
@@ -73,7 +101,7 @@ app.post("/login", async (req, res) => {
 		let user = getUserByName(givenUsername);
 		let password = user.password;
 		if (password == givenPassword) {
-			loggedInUser = user;
+			currentUser = user;
 			res.redirect("home");
 		} else {
 			res.render("login", {
@@ -88,7 +116,7 @@ app.post("/login", async (req, res) => {
 });
 
 app.post("/logout", async (req, res) => {
-	loggedInUser = undefined;
+	currentUser = undefined;
 	res.redirect("home");
 });
 
