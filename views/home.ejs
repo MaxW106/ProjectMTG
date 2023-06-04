@@ -17,8 +17,103 @@
 			</form>
 
 			<section class="container">
-				<% for (let i = 0; i < Math.min(cards.length, 10); i++) { %> <%-
-				include("partials/card", {card: cards[i]}) %> <%} %>
+				<% for (let card of cards) { %>
+				<div class="open-modal">
+					<%- include("partials/card", {card: card}) %>
+				</div>
+				<div class="card-info-modal hidden-modal">
+					<div class="modal-header">
+						<h1><%= card.name %></h1>
+					</div>
+					<div class="modal-body">
+						<img src="<%= card.img %>" alt="<%= card.name %>" />
+						<div class="modal-body-right">
+							<h2>Mana cost: <%= card.cmc %></h2>
+							<% if (typeof card.supertypes !== undefined) { %>
+							<h2>
+								Supertypes: <%= card.supertypes?.join(", ") %>
+							</h2>
+							<% } %>
+							<h2>Types: <%= card.types.join(", ") %></h2>
+							<% if (typeof card.subtypes !== undefined) { %>
+							<h2>Subtypes: <%= card.subtypes?.join(", ") %></h2>
+							<% } %>
+							<h2>Rarity: <%= card.rarity %></h2>
+						</div>
+					</div>
+				</div>
+				<%} %>
+				<div class="blur-bg hidden-blur"></div>
+				<style>
+					.open-modal {
+						cursor: pointer;
+					}
+
+					.card-info-modal {
+						background: lightgray;
+						position: absolute;
+						width: 50vw;
+						height: fit-content;
+						padding: 2rem;
+						border-radius: 2rem;
+
+						z-index: 99;
+					}
+
+					.blur-bg {
+						position: absolute;
+						top: 0;
+						left: 0;
+						height: 100%;
+						width: 100%;
+						background: rgba(0, 0, 0, 0.3);
+						backdrop-filter: blur(5px);
+					}
+
+					.hidden-blur {
+						display: none;
+					}
+
+					.hidden-modal {
+						display: none;
+					}
+
+					.modal-header * {
+						display: inline-block;
+					}
+
+					.modal-body {
+						margin-top: 1rem;
+						display: flex;
+					}
+
+					.modal-body > * {
+						margin-inline: auto;
+					}
+				</style>
+				<script>
+					let modals = document.querySelectorAll(".card-info-modal");
+					let openModals = document.querySelectorAll(".open-modal");
+					let blurBg = document.querySelector(".blur-bg");
+
+					let currentModal;
+
+					for (let i = 0; i < openModals.length; i++) {
+						openModals[i].addEventListener("click", function () {
+							modals[i].classList.remove("hidden-modal");
+							blurBg.classList.remove("hidden-blur");
+							currentModal = modals[i];
+						});
+					}
+
+					let closeModalFunction = function () {
+						blurBg.classList.add("hidden-blur");
+						currentModal.classList.add("hidden-modal");
+						currentModal = null;
+					};
+
+					blurBg.addEventListener("click", closeModalFunction);
+				</script>
 			</section>
 			<section class="home">
 				<a
