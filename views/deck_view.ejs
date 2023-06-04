@@ -3,32 +3,40 @@
 	<%- include("partials/head", { title: "DrawTest"}) %>
 	<body>
 		<%- include("partials/header", { pages: pages }) %>
-		<main>
+		<main class="deck-view">
 			<div class="deckview-grid">
 				<div class="topinfo">
 					<div class="left">
 						<img 
-							src="<%= deck.imageurl %>"
+							src="<%= deck.img %>"
 							alt="<%= deck.name %>"
 							width="200px"
 						/>
 					</div>
 					<div class="middle">
 						<h1 class="deckName"><%= deck.name %></h1>
-						<h2 class="averageManaCost">Average manacost</h2>
-						<h2 class="totalCards">Total cards</h2>
-						<h2 class="totalLands">Total land cards</h2>
+						<% let totalCmc = 0; let totalCards = 0; let totalLandCards = 0 %>
+						<% for (let card of cards) { %>
+							<% totalCmc += card[0].cmc * card[1]; %>
+							<% totalCards += card[1]; %>
+							<% if (card[0].types.includes("Land")) totalLandCards += card[1] %>
+						<% } %>
+						<h2 class="averageManaCost">Average mana cost: <%= Math.round(totalCmc * 100 / totalCards) / 100 %></h2>
+						<h2 class="totalCards">Total cards: <%= totalCards %></h2>
+						<h2 class="totalLands">Total land cards <%= totalLandCards %></h2>
 					</div>
 					<div class="right">
 						<button id="export">Export</button>
 					</div>
 				</div>
 				<section class="container">
-					<% for (let i = 0; i < deck.cards.length; i++) {%>
-						<div class="card">
-							<img src="images/card-front.jpeg" alt="card front" />
-							<h3>X 3</h3>
-						</div>
+					<% for (let card of cards) {%>
+						<a href="#">
+							<div class="card">
+								<img src="<%= card[0].img %>" alt="<%= card[0].name %>" />
+								<h3>X <%= card[1] %></h3>
+							</div>
+						</a>
 						<% } %>
 				</section>
 				</div>

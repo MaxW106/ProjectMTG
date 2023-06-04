@@ -79,11 +79,24 @@ app.get("/decks", async (req, res) => {
 	res.render("decks", { pages: pages, decks: decks });
 });
 
-app.get("/deck", (req, res) => {
-	let number = req.query.number as string;
-	if (!number) number = "0";
-	let i = parseInt(number);
-	res.render("deck_view", { pages: pages, deck: db.decks[i] });
+app.get("/deck", async (req, res) => {
+	let deckId = parseInt((req.query.id as string) ?? "1");
+	if (typeof currentUser === "undefined") {
+		res.redirect("home");
+		return;
+	}
+	let decksOfUser = getDecksByUserId(currentUser.id);
+
+	if (!decksOfUser.find((deck) => deck.id == deckId)) {
+		res.redirect("decks");
+		return;
+	}
+
+	res.render("deck_view", {
+		pages: pages,
+		deck: getDeckById(deckId),
+		cards: await getCardsFromDeck(deckId),
+	});
 });
 
 app.get("/drawtest", (req, res) => {
@@ -113,6 +126,11 @@ app.post("/login", async (req, res) => {
 		console.error(e);
 		res.redirect("/404");
 	}
+});
+
+app.get("/logout", async (req, res) => {
+	currentUser = undefined;
+	res.redirect("home");
 });
 
 app.post("/logout", async (req, res) => {

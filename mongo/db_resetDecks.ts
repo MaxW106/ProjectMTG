@@ -44,7 +44,7 @@ const createDeck = async (user_id: number, name: string) => {
 		id: counter++,
 		user_id: user_id,
 		name: name,
-		img: "./public/images/deck1.jpeg",
+		img: "/images/deck1.jpeg",
 		cards: [],
 	};
 	await client.db("ProjectMTG").collection("Decks").insertOne(newDeck);

@@ -544,6 +544,15 @@ section.home button {
 	grid-template-rows: repeat(2, 1fr);
 }*/
 
+main.deck-view {
+	color: white;
+}
+
+.deck-view a {
+	text-decoration: none;
+	color: white;
+}
+
 .left {
 	width: 120px;
 	height: 100px;
