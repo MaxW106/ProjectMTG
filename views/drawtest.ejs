@@ -4,7 +4,7 @@
     <body>
         <%- include("partials/header", { pages: pages }) %>
         <main>
-            <div class="controls-container">
+            <div class="container1">
                 <select name="deck-choser" class="deck-choser">
                     <option value="deck_1">deck1</option>
                     <option value="deck_2">deck2</option>
@@ -12,9 +12,13 @@
                     <option value="deck_4">deck4</option>
                     <option value="deck_5">deck5</option>
                 </select>
+            </div>
+            <div class="container2">
                 <input class="drawpercentage" type="drawpercentage" placeholder="Cardname">
                 <button class="track" type="button">track</button>
                 <p class="drawpercentage-display">5%</p>
+            </div>
+            <div class="container3">
                 <button id="btn-draw" type="button">draw</button>
                 <button id="btn-reset" type="button">reset</button>
                 <img id="drawpile" src="images/card-back.png" alt="drawpile">
