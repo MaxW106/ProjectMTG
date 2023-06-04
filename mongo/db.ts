@@ -87,8 +87,14 @@ const createUser = async (
 	await dbUsers.insertOne(user);
 };
 
-const getUsers = async () => {
-	return await dbUsers.find({}).toArray();
+const getUsers = () => {
+	return users;
+};
+
+const getUserByName = (name: string) => {
+	let user = users.find((user) => user.name === name);
+	if (typeof user === "undefined") throw "user not found";
+	return user;
 };
 
 // decks
@@ -226,6 +232,7 @@ export {
 	connect,
 	createUser,
 	getUsers,
+	getUserByName,
 	createDeck,
 	getDecks,
 	getDecksByUserId,

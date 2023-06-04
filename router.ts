@@ -1,38 +1,27 @@
 import express from "express";
-import session from "express-session";
-import mtg from "mtgsdk-ts";
-import { MongoClient, ObjectId, Collection } from "mongodb";
-const secret = require("./secret.json");
-const client = new MongoClient(secret.mongoUri);
-import { connect, createUser, User } from "./mongo/db";
+const validator = require("email-validator");
 const path = require("path");
-const app = express();
-let validator = require("email-validator");
 
-const SESSION_SECRET = Buffer.from(require("os").userInfo().username).toString(
-	"base64"
-);
-
+import { connect, createUser, getUsers, getUserByName, User } from "./mongo/db";
 import db from "./db.json";
-import { name } from "ejs";
-import { error } from "console";
 
-let pages = ["home", "decks", "drawtest", "login"];
+// express setup
+const app = express();
 
 app.use(express.json({ limit: "1mb" }));
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "public")));
 app.set("port", 3000);
 app.set("view engine", "ejs");
 
-app.use(express.static(path.join(__dirname, "public")));
-
-/*
-app.use((req, res, next) => {
-	res.locals.user = req.session.user;
-});
-*/
+// db setup
 connect();
 
+// other setup
+let pages = ["home", "decks", "drawtest", "login"];
+let loggedInUser;
+
+// routes
 app.get("/", (req, res) => {
 	res.render("landingpage");
 });
@@ -62,6 +51,13 @@ app.get("/decks", (req, res) => {
 	res.render("decks", { pages: pages });
 });
 
+app.get("/deck", (req, res) => {
+	let number = req.query.number as string;
+	if (!number) number = "0";
+	let i = parseInt(number);
+	res.render("deck_view", { pages: pages, deck: db.decks[i] });
+});
+
 app.get("/drawtest", (req, res) => {
 	res.render("drawtest", { pages: pages });
 });
@@ -69,17 +65,15 @@ app.get("/drawtest", (req, res) => {
 app.get("/login", (req, res) => {
 	res.render("login", { pages: pages, triedToLogin: false });
 });
+
 app.post("/login", async (req, res) => {
 	try {
-		client.connect();
-		let username = req.body.username;
-		let psw = req.body.password;
-		let user = await client
-			.db("ProjectMTG")
-			.collection("Users")
-			.findOne({ name: username });
-		let pass = user?.password;
-		if (pass == psw) {
+		let givenUsername = req.body.username;
+		let givenPassword = req.body.password;
+		let user = getUserByName(givenUsername);
+		let password = user.password;
+		if (password == givenPassword) {
+			loggedInUser = user;
 			res.redirect("home");
 		} else {
 			res.render("login", {
@@ -89,7 +83,13 @@ app.post("/login", async (req, res) => {
 		}
 	} catch (e) {
 		console.error(e);
+		res.redirect("/404");
 	}
+});
+
+app.post("/logout", async (req, res) => {
+	loggedInUser = undefined;
+	res.redirect("home");
 });
 
 app.get("/register", (req, res) => {
@@ -141,11 +141,9 @@ app.post("/register", async (req, res) => {
 	}
 });
 
-app.get("/deck", (req, res) => {
-	let number = req.query.number as string;
-	if (!number) number = "0";
-	let i = parseInt(number);
-	res.render("deck_view", { pages: pages, deck: db.decks[i] });
+app.get("/500", (req, res) => {
+	res.status(500);
+	res.render("500", { pages: pages });
 });
 
 app.get("/*", (req, res) => {
