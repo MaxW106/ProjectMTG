@@ -7,7 +7,7 @@ Colaborators:
 -   Max Wiercx
 -   Artjom Kuzmenko
 -   Daniel Jouye
--   Bilal Thoelen
+-   Bilal Th
 -   Maher Ahrirou
 
 npm package used to request cards:
